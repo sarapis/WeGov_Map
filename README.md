@@ -1,4 +1,4 @@
-`/html` - root Apache virtual host folder
+`/html` - Apache virtual host root
 
 `/data_include/ini.php` - db etc settings for API
 
