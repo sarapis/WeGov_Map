@@ -1,0 +1,300 @@
+[11-Mar-2020 11:07:41 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[11-Mar-2020 11:07:41 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[11-Mar-2020 11:07:41 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[11-Mar-2020 11:07:41 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[11-Mar-2020 11:07:41 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[11-Mar-2020 11:07:41 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[11-Mar-2020 11:07:41 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[11-Mar-2020 11:07:41 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[11-Mar-2020 11:07:41 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 11:07:41 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 11:09:41 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[11-Mar-2020 11:09:41 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[11-Mar-2020 11:09:41 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[11-Mar-2020 11:09:41 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[11-Mar-2020 11:09:41 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[11-Mar-2020 11:09:41 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[11-Mar-2020 11:09:41 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[11-Mar-2020 11:09:41 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[11-Mar-2020 11:09:41 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 11:09:41 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 11:11:14 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[11-Mar-2020 11:11:14 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[11-Mar-2020 11:11:14 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[11-Mar-2020 11:11:14 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[11-Mar-2020 11:11:14 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[11-Mar-2020 11:11:14 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[11-Mar-2020 11:11:14 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[11-Mar-2020 11:11:14 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[11-Mar-2020 11:11:14 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 11:11:14 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 14:24:59 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[11-Mar-2020 14:24:59 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[11-Mar-2020 14:24:59 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[11-Mar-2020 14:24:59 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[11-Mar-2020 14:24:59 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[11-Mar-2020 14:24:59 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[11-Mar-2020 14:24:59 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[11-Mar-2020 14:24:59 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[11-Mar-2020 14:24:59 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 14:24:59 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 14:47:09 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[11-Mar-2020 14:47:09 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[11-Mar-2020 14:47:10 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[11-Mar-2020 14:47:10 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[11-Mar-2020 14:47:10 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[11-Mar-2020 14:47:10 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[11-Mar-2020 14:47:10 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[11-Mar-2020 14:47:10 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[11-Mar-2020 14:47:10 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 14:47:10 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 15:27:37 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[11-Mar-2020 15:27:37 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[11-Mar-2020 15:27:37 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[11-Mar-2020 15:27:37 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[11-Mar-2020 15:27:37 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[11-Mar-2020 15:27:37 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[11-Mar-2020 15:27:37 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[11-Mar-2020 15:27:37 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[11-Mar-2020 15:27:37 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 15:27:37 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 15:28:09 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[11-Mar-2020 15:28:09 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[11-Mar-2020 15:28:09 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[11-Mar-2020 15:28:09 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[11-Mar-2020 15:28:09 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[11-Mar-2020 15:28:09 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[11-Mar-2020 15:28:09 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[11-Mar-2020 15:28:09 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[11-Mar-2020 15:28:09 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 15:28:09 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 15:53:15 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[11-Mar-2020 15:53:15 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[11-Mar-2020 15:53:15 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[11-Mar-2020 15:53:15 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[11-Mar-2020 15:53:15 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[11-Mar-2020 15:53:15 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[11-Mar-2020 15:53:15 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[11-Mar-2020 15:53:15 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[11-Mar-2020 15:53:15 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[11-Mar-2020 15:53:15 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 05:28:58 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[12-Mar-2020 05:28:58 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[12-Mar-2020 05:28:58 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[12-Mar-2020 05:28:58 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[12-Mar-2020 05:28:58 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[12-Mar-2020 05:28:58 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[12-Mar-2020 05:28:58 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[12-Mar-2020 05:28:58 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[12-Mar-2020 05:28:58 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 05:28:58 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 07:27:10 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[12-Mar-2020 07:27:10 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[12-Mar-2020 07:27:10 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[12-Mar-2020 07:27:10 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[12-Mar-2020 07:27:10 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[12-Mar-2020 07:27:10 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[12-Mar-2020 07:27:10 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[12-Mar-2020 07:27:10 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[12-Mar-2020 07:27:10 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 07:27:10 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 09:56:11 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[12-Mar-2020 09:56:11 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[12-Mar-2020 09:56:11 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[12-Mar-2020 09:56:11 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[12-Mar-2020 09:56:11 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[12-Mar-2020 09:56:11 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[12-Mar-2020 09:56:11 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[12-Mar-2020 09:56:11 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[12-Mar-2020 09:56:11 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 09:56:11 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 15:12:30 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[12-Mar-2020 15:12:30 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[12-Mar-2020 15:12:30 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[12-Mar-2020 15:12:30 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[12-Mar-2020 15:12:30 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[12-Mar-2020 15:12:30 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[12-Mar-2020 15:12:30 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[12-Mar-2020 15:12:30 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[12-Mar-2020 15:12:30 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 15:12:30 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 15:21:52 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[12-Mar-2020 15:21:52 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[12-Mar-2020 15:21:52 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[12-Mar-2020 15:21:52 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[12-Mar-2020 15:21:52 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[12-Mar-2020 15:21:52 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[12-Mar-2020 15:21:52 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[12-Mar-2020 15:21:52 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[12-Mar-2020 15:21:52 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 15:21:52 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 18:17:51 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[12-Mar-2020 18:17:51 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[12-Mar-2020 18:17:51 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[12-Mar-2020 18:17:51 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[12-Mar-2020 18:17:51 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[12-Mar-2020 18:17:51 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[12-Mar-2020 18:17:51 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[12-Mar-2020 18:17:51 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[12-Mar-2020 18:17:51 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 18:17:52 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 18:24:23 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[12-Mar-2020 18:24:23 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[12-Mar-2020 18:24:23 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[12-Mar-2020 18:24:23 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[12-Mar-2020 18:24:23 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[12-Mar-2020 18:24:23 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[12-Mar-2020 18:24:23 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[12-Mar-2020 18:24:23 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[12-Mar-2020 18:24:23 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[12-Mar-2020 18:24:23 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 04:35:35 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[13-Mar-2020 04:36:02 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[13-Mar-2020 04:36:03 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[13-Mar-2020 04:36:03 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[13-Mar-2020 04:36:03 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[13-Mar-2020 04:36:03 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[13-Mar-2020 04:36:03 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[13-Mar-2020 04:36:03 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[13-Mar-2020 04:36:03 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 04:36:03 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 04:53:34 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[13-Mar-2020 04:53:34 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[13-Mar-2020 04:53:34 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[13-Mar-2020 04:53:34 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[13-Mar-2020 04:53:34 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[13-Mar-2020 04:53:34 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[13-Mar-2020 04:53:34 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[13-Mar-2020 04:53:34 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[13-Mar-2020 04:53:34 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 04:53:34 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 05:51:14 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[13-Mar-2020 05:51:14 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[13-Mar-2020 05:51:14 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[13-Mar-2020 05:51:14 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[13-Mar-2020 05:51:14 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[13-Mar-2020 05:51:14 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[13-Mar-2020 05:51:14 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[13-Mar-2020 05:51:14 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[13-Mar-2020 05:51:14 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 05:51:14 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 05:53:23 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[13-Mar-2020 05:53:23 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[13-Mar-2020 05:53:23 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[13-Mar-2020 05:53:23 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[13-Mar-2020 05:53:23 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[13-Mar-2020 05:53:23 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[13-Mar-2020 05:53:23 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[13-Mar-2020 05:53:23 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[13-Mar-2020 05:53:23 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 05:53:23 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 05:54:01 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[13-Mar-2020 05:54:01 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[13-Mar-2020 05:54:01 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[13-Mar-2020 05:54:01 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[13-Mar-2020 05:54:01 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[13-Mar-2020 05:54:01 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[13-Mar-2020 05:54:01 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[13-Mar-2020 05:54:01 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[13-Mar-2020 05:54:01 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 05:54:01 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 14:50:08 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[13-Mar-2020 14:50:08 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[13-Mar-2020 14:50:08 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[13-Mar-2020 14:50:08 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[13-Mar-2020 14:50:08 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[13-Mar-2020 14:50:08 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[13-Mar-2020 14:50:08 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[13-Mar-2020 14:50:08 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[13-Mar-2020 14:50:08 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 14:50:08 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 14:55:10 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[13-Mar-2020 14:55:10 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[13-Mar-2020 14:55:10 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[13-Mar-2020 14:55:10 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[13-Mar-2020 14:55:10 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[13-Mar-2020 14:55:10 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[13-Mar-2020 14:55:10 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[13-Mar-2020 14:55:10 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[13-Mar-2020 14:55:10 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 14:55:10 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 14:56:14 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[13-Mar-2020 14:56:14 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[13-Mar-2020 14:56:14 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[13-Mar-2020 14:56:14 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[13-Mar-2020 14:56:14 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[13-Mar-2020 14:56:14 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[13-Mar-2020 14:56:14 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[13-Mar-2020 14:56:14 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[13-Mar-2020 14:56:14 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 14:56:14 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 14:58:19 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[13-Mar-2020 14:58:19 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[13-Mar-2020 14:58:19 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[13-Mar-2020 14:58:19 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[13-Mar-2020 14:58:19 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[13-Mar-2020 14:58:19 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[13-Mar-2020 14:58:19 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[13-Mar-2020 14:58:19 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[13-Mar-2020 14:58:19 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 14:58:20 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 14:58:40 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[13-Mar-2020 14:58:40 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[13-Mar-2020 14:58:41 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[13-Mar-2020 14:58:41 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[13-Mar-2020 14:58:41 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[13-Mar-2020 14:58:41 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[13-Mar-2020 14:58:41 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[13-Mar-2020 14:58:41 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[13-Mar-2020 14:58:41 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 14:58:41 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 15:25:29 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[13-Mar-2020 15:25:29 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[13-Mar-2020 15:25:29 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[13-Mar-2020 15:25:29 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[13-Mar-2020 15:25:29 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[13-Mar-2020 15:25:29 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[13-Mar-2020 15:25:29 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[13-Mar-2020 15:25:29 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[13-Mar-2020 15:25:29 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[13-Mar-2020 15:25:29 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[14-Mar-2020 10:36:27 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[14-Mar-2020 10:36:27 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[14-Mar-2020 10:36:27 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[14-Mar-2020 10:36:27 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[14-Mar-2020 10:36:27 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[14-Mar-2020 10:36:27 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[14-Mar-2020 10:36:27 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[14-Mar-2020 10:36:27 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[14-Mar-2020 10:36:27 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[14-Mar-2020 10:36:27 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[14-Mar-2020 16:31:03 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[14-Mar-2020 16:31:03 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[14-Mar-2020 16:31:03 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[14-Mar-2020 16:31:03 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[14-Mar-2020 16:31:03 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[14-Mar-2020 16:31:03 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[14-Mar-2020 16:31:03 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[14-Mar-2020 16:31:03 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[14-Mar-2020 16:31:03 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[14-Mar-2020 16:31:03 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[14-Mar-2020 23:06:18 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[14-Mar-2020 23:06:19 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[14-Mar-2020 23:06:19 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[14-Mar-2020 23:06:19 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[14-Mar-2020 23:06:19 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[14-Mar-2020 23:06:19 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[14-Mar-2020 23:06:19 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[14-Mar-2020 23:06:19 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[14-Mar-2020 23:06:19 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[14-Mar-2020 23:06:19 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[16-Mar-2020 05:58:03 UTC] PHP Notice:  Constant DB_HOST already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 2
+[16-Mar-2020 05:58:03 UTC] PHP Notice:  Constant DB_NAME already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 3
+[16-Mar-2020 05:58:03 UTC] PHP Notice:  Constant DB_USER already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 4
+[16-Mar-2020 05:58:03 UTC] PHP Notice:  Constant DB_PASS already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 5
+[16-Mar-2020 05:58:03 UTC] PHP Notice:  Constant GEOCLIENT_APP already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 7
+[16-Mar-2020 05:58:03 UTC] PHP Notice:  Constant GEOCLIENT_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 8
+[16-Mar-2020 05:58:03 UTC] PHP Notice:  Constant AIRTABLE_KEY already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 10
+[16-Mar-2020 05:58:03 UTC] PHP Notice:  Constant AIRTABLE_DOC already defined in /home/d9ithub/public_html/wegov_displayapp/data_include/ini.php on line 11
+[16-Mar-2020 05:58:03 UTC] PHP Notice:  Undefined index: id in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16
+[16-Mar-2020 05:58:03 UTC] PHP Notice:  Undefined index: plate in /home/d9ithub/public_html/wegov_displayapp/html/data/submissions.php on line 16

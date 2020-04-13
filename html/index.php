@@ -1,2 +1,2 @@
 <?php
-header('Location: placabuse.php');
+header('Location: covidprojects.php');

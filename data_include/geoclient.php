@@ -3,6 +3,18 @@ class Geoclient
 {
 	static function match($addr)
 	{
+		return self::mapResponce(self::req($addr));
+	}
+
+	static function getNtaCode($addr)
+	{
+		$r = self::req($addr);
+		$r = $r['results'][0]['response'];
+		return $r['nta'];
+	}
+
+	static function req($addr)
+	{
 		$url = sprintf(
 						'https://api.cityofnewyork.us/geoclient/v1/search.json?input=%s&app_id=%s&app_key=%s', 
 						urlencode($addr),
@@ -10,7 +22,7 @@ class Geoclient
 						GEOCLIENT_KEY
 					);
 		$resp = Curl::exec($url);
-		return self::mapResponce(json_decode($resp, true));
+		return json_decode($resp, true);
 	}
 	
 	static function mapResponce($r)

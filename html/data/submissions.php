@@ -1,6 +1,5 @@
 <?php 
 include '../../data_include/autoload.php';
-
 $request = mapIncomingRequest($_GET);
 $model = new Model();
 
@@ -22,10 +21,11 @@ function mapIncomingRequest($rr)
 		$rr['start'] = date('Y-m-d', strtotime($b));
 		$rr['end'] = date('Y-m-d', strtotime($e));
 		unset($rr['dates']);
-		foreach ($rr as $k=>$v)
-			$rr[$k] = addslashes($v);
 		//print_r($rr);
 	}
+	array_walk_recursive($rr, function ($el) {
+		return addslashes($el);
+	});
 	
 	return $rr;
 }

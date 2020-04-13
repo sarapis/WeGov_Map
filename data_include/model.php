@@ -8,9 +8,10 @@ class Model
 		$this->db = new db(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 	}
 	
-	function getAll()
+	function getAll($type)
 	{
-		return $this->q('SELECT * FROM dd');
+		$t = ['submissions' => 'dd', 'covid_prj' => 'covid_prj', 'covid_pods' => 'covid_pods', ][$type];
+		return $this->q("SELECT * FROM {$t}");
 	}
 	
 	function mapAssoc($raw, $f='id')
@@ -28,7 +29,7 @@ class Model
 	}
 
 	
-///// requests ////////////////////////////////////////////////
+///// submissions ////////////////////////////////////////////////
 	
 	function getCards($pp)
 	{
@@ -89,11 +90,64 @@ class Model
 				'geometry' => $g
 			];
 		}
+		//print_r($rr);
 		return $rr;
 	}
 	
 	function mapCentroid($raw)
 	{
 		
+	}
+	
+///// covid ////////////////////////////////////////////////
+
+	function getCovidPrj($nta)
+	{
+		$ntas = implode("','", (array)$nta);
+		$rr = $this->db->q("SELECT *, 'project' as object_type FROM covid_prj WHERE nta IN ('{$ntas}') OR nta LIKE '' ORDER BY name");
+		return $this->mapCovidPrj($rr);
+	}
+	
+	
+	function mapCovidPrj($rr)
+	{
+		return $rr;
+	}
+	
+	
+	function getCovidPods($nta)
+	{
+		$ntas = implode("','", (array)$nta);
+		$rr = $this->db->q("SELECT *, 'pod' as object_type FROM covid_pods WHERE nta IN ('{$ntas}') ORDER BY name");
+		return $this->mapCovidPods($rr);
+	}
+	
+	
+	function mapCovidPods($rr)
+	{
+		return $rr;
+	}
+	
+	
+	function getCovidAll($req)
+	{
+		$nta = $req['nta'];
+		$pp = array_merge($this->getCovidPods($nta), $this->getCovidPrj($nta));
+		$rr = [];
+		foreach ($pp as $p)
+		{
+			$tab = ['National' => 'National', 'City-Wide' => 'City-Wide'][$p['ntas']] ?? 'Neighborhood';
+			$rr[$tab][] = $p;
+		}
+		$rr = array_merge(array_fill_keys(['Neighborhood', 'City-Wide', 'National'], []), $rr);
+		return array_filter($rr);
+	}
+	
+	
+	function getCovidCoverage()
+	{
+		return $this->db->q("SELECT nta FROM covid_prj  WHERE nta NOT LIKE ''
+							UNION 
+							SELECT nta FROM covid_pods WHERE nta NOT LIKE ''");
 	}
 }
