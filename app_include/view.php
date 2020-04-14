@@ -226,6 +226,11 @@ function view($pageType)
 									</div>
 								</div>
 							</div>
+							<div class="btn-group" id="clearFilters">
+								<button type="button" class="btn btn-outline-primary btn-sm" onclick="clearFilters();">
+									Clear filters <i data-feather="x-square"></i>
+								</button>
+							</div>
 						</div>
 						<!-- /search form -->
 

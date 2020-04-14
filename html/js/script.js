@@ -5,14 +5,25 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
     center: [-73.96, 40.65],
-	pitch: 60,
+	//pitch: 60,
     zoom: 11
 });
 
 map.addControl(new mapboxgl.NavigationControl());
 
 $('#dates').daterangepicker(
-	{}, 
+	{
+		startDate: new Date('January 1, 2020 00:00:00'),
+        endDate: moment(),
+		ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+	},
 	function (start, end) {
 		searchByDatesCallback(start, end);
 	}
@@ -48,7 +59,7 @@ map.on('load', function() {
 	}
 	
 	if (typeof defaultRequest == 'undefined' || $.isEmptyObject(defaultRequest)) {
-		defaultRequest = {'dates': '1 week ago - today'}
+		defaultRequest = {'dates': '01 Jan 2020 - today'}
 	}
 	dataRequest(context, defaultRequest);
 
@@ -253,8 +264,11 @@ function searchByPlate() {
 		alert('red', 'Wrong request', 'Enter valid plate number');
 		return;
 	}
+	$('#pid').val('');
+	$('#dates').val('');
+	$('#boundaryType').val('-');
+	updateBoundaryListCallback();
 	dataRequest(context, {'plate': plate});
-	$('#plate').val('');
 }
 
 
@@ -264,15 +278,21 @@ function searchByPID() {
 		alert('red', 'Wrong request', 'Enter valid Project ID');
 		return;
 	}
+	$('#dates').val('');
+	$('#plate').val('');
+	$('#boundaryType').val('-');
+	updateBoundaryListCallback();
 	dataRequest(context, {'pid': pid});
-	$('#pid').val('');
 }
 
 
 function searchByDatesCallback(start, end) {
 	dates = `${start.format('MM/DD/YYYY')} - ${end.format('MM/DD/YYYY')}`;
+	$('#pid').val('');
+	$('#plate').val('');
+	$('#boundaryType').val('-');
+	updateBoundaryListCallback();
 	dataRequest(context, {'dates': dates});
-	$('#dates').val('');
 }
 
 
@@ -282,8 +302,22 @@ function searchByDates() {
 		alert('red', 'Wrong request', 'Enter valid date range');
 		return;
 	}
+	$('#pid').val('');
+	$('#plate').val('');
+	$('#boundaryType').val('-');
+	updateBoundaryListCallback();
 	dataRequest(context, {'dates': dates});
+}
+
+
+function clearFilters() {
+	var defaultRequest = {'dates': '01 Jan 2020 - today'}
+	$('#pid').val('');
 	$('#dates').val('');
+	$('#plate').val('');
+	$('#boundaryType').val('-');
+	updateBoundaryListCallback();
+	dataRequest(context, defaultRequest);
 }
 
 
@@ -315,9 +349,10 @@ function searchByBoundary() {
 	if (bType == '-') {
 		alert('red', 'Wrong request', 'Enter valid boundary type');
 	}
+	$('#pid').val('');
+	$('#dates').val('');
+	$('#plate').val('');
 	dataRequest(context, {'btype': bType, 'boundary': boundary});
-	$('#boundaryType').val('-');
-	updateBoundaryListCallback();
 }
 
 

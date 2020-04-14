@@ -26,7 +26,7 @@ body {
 		height: 150px; */
 		z-index: 10;
 	}
-	#searchControls button.dropdown-toggle {
+	#searchControls button.dropdown-toggle, #clearFilters {
 		margin: 3px;
 		background: #fff;
 		color: #007bff;
@@ -55,6 +55,19 @@ body {
 		background: rgba(20, 20, 20, .1);
 		border-radius: 2px;
 	}
+	
+	#clearFilters .feather {
+		width: 16px;
+		height: 16px;
+		margin-top: -2px;
+		margin-left: 3px;
+		stroke: #007bff;
+		stroke-width: 1.2;
+		cursor: pointer;
+	}
+	
+	
+	
 /*----------*/
 
 
