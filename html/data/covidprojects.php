@@ -178,6 +178,9 @@ class grViewer
 			case 'Twitter':
 				$d = str_replace('@', 'https://twitter.com/', $d);
 				break;
+			case 'Website':
+				$d = preg_match('~http~si', $d) ? $d : "//{$d}";
+				break;
 		}
 		echo $d;
 	}
