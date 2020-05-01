@@ -71,6 +71,7 @@ function view($embeddable=false)
 											<li><a href="http://capital.research.wegov.nyc/" class="menu_link">Capital Projects Directory</a></li>
 											<li><a href="http://services.wegov.nyc" class="menu_link">Services Directory & API</a></li>
 											<li><a href="http://nyclaws.readthedocs.io/" class="menu_link">Charter, Code & Rules</a></li>
+											<li><a href="https://maps.wegov.nyc/" class="menu_link">Maps</a></li>
 											<li><a href="https://wegov.nyc/action/" class="menu_link">The Action App!</a></li>
 										</ul>
 									</li>
@@ -95,7 +96,7 @@ function view($embeddable=false)
 
 				<div class="submenu_div">
 					<div class="container">
-						<span class="badge badge-light title_top_header" >Actions</span>
+						<span class="badge badge-light title_top_header" >Maps</span>
 						<a class="menu_link active">Mutual Aid Groups</a>
 						<a class="menu_link" href="placabuse.php">Placard Abuse</a>
 						<a class="menu_link" href="capprojects.php">Capital Projects</a>
@@ -125,6 +126,7 @@ function view($embeddable=false)
 								<li><a href="http://capital.research.wegov.nyc/" class="menu_link">Capital Projects Directory</a></li>
 								<li><a href="http://services.wegov.nyc" class="menu_link">Services Directory & API</a></li>
 								<li><a href="http://nyclaws.readthedocs.io/" class="menu_link">Charter, Code & Rules</a></li>
+								<li><a href="https://maps.wegov.nyc/" class="menu_link">Maps</a></li>
 								<li><a href="https://wegov.nyc/action/" class="menu_link">The Action App!</a></li>
 							</ul>
 						</li>
