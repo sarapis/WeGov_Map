@@ -30,6 +30,7 @@ class Geoclient
 		$r = $r['results'][0]['response'];
 		return [
 			'cd' => $r['communityDistrict'],
+			'ed' => $r['electionDistrict'],
 			'pp' => $r['policePrecinct'],
 			'dsny' => $r['sanitationDistrict'],
 			'fb' => $r['fireBattalion'],

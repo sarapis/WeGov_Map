@@ -1,11 +1,6 @@
 <?php
-/*
-	$pageType
-		'pa' - Plackard Abuse
-		'cp' - Capital Projects
-*/
 
-function view($pageType)
+function view()
 {
 ?><!DOCTYPE html>
 <html>
@@ -83,10 +78,8 @@ function view($pageType)
 							</ul>
 						</div>
 						<!-- end main menu area -->
-						<!-- <a class="nav-link " id="google_translate_element"></a> -->
 						<div class="top-bar-right">
 							<button type="button" onclick="openNav()"  class="btn btn-raised btn-block btn-primary menu_filter">
-								<!-- <img src="resources/menu.svg" alt="" title="">Menu  -->
 								Menu
 							</button>
 						</div>
@@ -98,11 +91,11 @@ function view($pageType)
 			<div class="submenu_div">
 				<div class="container">
 					<span class="badge badge-light title_top_header" >Maps</span>
+					<a class="menu_link<?php echo SubView::$type == 'cb' ? ' active' : '" href="cityboundaries.php'; ?>">City Boundaries</a>
 					<a class="menu_link" href="covidprojects.php">Mutual Aid Groups</a>
-					<a class="menu_link<?php echo $pageType == 'pa' ? ' active' : '" href="placabuse.php'; ?>">Placard Abuse</a>
-					<a class="menu_link<?php echo $pageType == 'cp' ? ' active' : '" href="capprojects.php'; ?>">Capital Projects</a>
+					<a class="menu_link<?php echo SubView::$type == 'pa' ? ' active' : '" href="placabuse.php'; ?>">Placard Abuse</a>
+					<a class="menu_link<?php echo SubView::$type == 'cp' ? ' active' : '" href="capprojects.php'; ?>">Capital Projects</a>
 					<a class="menu_link" href="https://wegov.nyc/tools/action/">About</a>
-					<!-- <a class="menu_link float-right" href="javascript:void(0)">Download the App</a> -->
 				</div>
 			</div>
 			<!-- start mobile menu area -->
@@ -147,92 +140,96 @@ function view($pageType)
 					<div  class="col-lg-9 col-md-9 col-sm-12 left_column">
 						<!-- search form -->
 						<div id='searchControls'>
-						
-							<?php if ($pageType == 'pa') : ?>
-								<div class="btn-group dropdown">
-									<button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										Search by Plate
-									</button>
-									<div class="dropdown-menu fade" id="dropdownPlate">
-										<div class="px-4 py-3">
-											<div class="input-group input-group-sm">
-												<input type="text" class="form-control" placeholder="Plate number.." aria-label="Plate number.." aria-describedby="addon-submit1" id="plate">
-												<div class="input-group-append">
-													<button class="btn btn-outline-primary" id="addon-submit1" onclick="searchByPlate();">Search</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+							<?php if (method_exists(SubView, 'searchForm')) : ?>
+								<?php SubView::searchForm(); ?>
 								
 							<?php else : ?>
+								<?php if ($pageType == 'pa') : ?>
+									<div class="btn-group dropdown">
+										<button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Search by Plate
+										</button>
+										<div class="dropdown-menu fade" id="dropdownPlate">
+											<div class="px-4 py-3">
+												<div class="input-group input-group-sm">
+													<input type="text" class="form-control" placeholder="Plate number.." aria-label="Plate number.." aria-describedby="addon-submit1" id="plate">
+													<div class="input-group-append">
+														<button class="btn btn-outline-primary" id="addon-submit1" onclick="searchByPlate();">Search</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								<?php else : ?>
+									<div class="btn-group dropdown">
+										<button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Search by Project ID
+										</button>
+										<div class="dropdown-menu fade" id="dropdownPID">
+											<div class="px-4 py-3">
+												<div class="input-group input-group-sm">
+													<input type="text" class="form-control" placeholder="Project ID.." aria-label="Project ID.." aria-describedby="addon-submit1" id="pid">
+													<div class="input-group-append">
+														<button class="btn btn-outline-primary" id="addon-submit1" onclick="searchByPID();">Search</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								<?php endif; ?>
+								
 								<div class="btn-group dropdown">
 									<button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										Search by Project ID
+										Search by Date Range
 									</button>
-									<div class="dropdown-menu fade" id="dropdownPID">
+									<div class="dropdown-menu fade" id="dropdownDates">
 										<div class="px-4 py-3">
 											<div class="input-group input-group-sm">
-												<input type="text" class="form-control" placeholder="Project ID.." aria-label="Project ID.." aria-describedby="addon-submit1" id="pid">
+												<input type="text" class="form-control" placeholder="Date range.." aria-label="Date range.." aria-describedby="addon-submit2" id="dates">
 												<div class="input-group-append">
-													<button class="btn btn-outline-primary" id="addon-submit1" onclick="searchByPID();">Search</button>
+													<button class="btn btn-outline-primary" id="addon-submit2" onclick="searchByDates();">Search</button>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								
-							<?php endif; ?>
-							
-							<div class="btn-group dropdown">
-								<button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Search by Date Range
-								</button>
-								<div class="dropdown-menu fade" id="dropdownDates">
-									<div class="px-4 py-3">
-										<div class="input-group input-group-sm">
-											<input type="text" class="form-control" placeholder="Date range.." aria-label="Date range.." aria-describedby="addon-submit2" id="dates">
-											<div class="input-group-append">
-												<button class="btn btn-outline-primary" id="addon-submit2" onclick="searchByDates();">Search</button>
-											</div>
+								<div class="btn-group dropdown">
+									<button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Search by Boundary
+									</button>
+									<div class="dropdown-menu fade" id="dropdownBoundary">
+										<div class="px-4 py-3">
+											<select class="custom-select custom-select-sm mb-2" id="boundaryType" onchange="updateBoundaryList();">
+											<option value="-" selected>Open this select menu</option>
+											<option value="cd">Community Districts</option>
+											<option value="pp">Police Precincts</option>
+											<option value="dsny">Sanitation Districts</option>
+											<option value="fb">Fire Battilion</option>
+											<option value="sd">School Districts</option>
+											<option value="hc">Health Center Districts</option>
+											<option value="cc">City Council Districts</option>
+											<option value="nycongress">Congressional Districts</option>
+											<option value="sa">State Assembly Districts</option>
+											<option value="ss">State Senate Districts</option>
+											<option value="bid">Business Improvement District</option>
+											<option value="nta">Neighborhood Tabulation Area</option>
+											<option value="zipcode">Zip Code</option>
+											</select>
+											<select class="custom-select custom-select-sm mb-2" id="boundary">
+											</select>
+											<button class="btn btn-outline-primary btn-sm">Search</button>
 										</div>
 									</div>
 								</div>
-							</div>
-							
-							<div class="btn-group dropdown">
-								<button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Search by Boundary
-								</button>
-								<div class="dropdown-menu fade" id="dropdownBoundary">
-									<div class="px-4 py-3">
-										<select class="custom-select custom-select-sm mb-2" id="boundaryType" onchange="updateBoundaryList();">
-										<option value="-" selected>Open this select menu</option>
-										<option value="cd">Community Districts</option>
-										<option value="pp">Police Precincts</option>
-										<option value="dsny">Sanitation Districts</option>
-										<option value="fb">Fire Battilion</option>
-										<option value="sd">School Districts</option>
-										<option value="hc">Health Center Districts</option>
-										<option value="cc">City Council Districts</option>
-										<option value="nycongress">Congressional Districts</option>
-										<option value="sa">State Assembly Districts</option>
-										<option value="ss">State Senate Districts</option>
-										<option value="bid">Business Improvement District</option>
-										<option value="nta">Neighborhood Tabulation Area</option>
-										<option value="zipcode">Zip Code</option>
-										</select>
-										<select class="custom-select custom-select-sm mb-2" id="boundary">
-										</select>
-										<button class="btn btn-outline-primary btn-sm">Search</button>
-									</div>
+								<div class="btn-group" id="clearFilters">
+									<button type="button" class="btn btn-outline-primary btn-sm" onclick="clearFilters();">
+										Clear filters <i data-feather="x-square"></i>
+									</button>
 								</div>
-							</div>
-							<div class="btn-group" id="clearFilters">
-								<button type="button" class="btn btn-outline-primary btn-sm" onclick="clearFilters();">
-									Clear filters <i data-feather="x-square"></i>
-								</button>
-							</div>
+							<?php endif; ?>
 						</div>
 						<!-- /search form -->
 
@@ -241,10 +238,10 @@ function view($pageType)
 						<div aria-live="polite" aria-atomic="true" id="toasts">
 							
 							<!-- Position it -->
-							<div style="position: absolute; top: 0; left: 0;">
+							<div style="position: relative; top: 0; left: 0;">
 
 								<!-- Then put toasts within -->
-								<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="8000" id="alert">
+								<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="6000" id="alert">
 									<div class="toast-header">
 										<svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="red"></rect></svg>
 										<strong class="mr-auto" id="alert-header">Some header</strong>
@@ -262,25 +259,12 @@ function view($pageType)
 					</div>
 					<!-- /toasts -->
 					<div class=" col-lg-3 col-md-3 col-sm-6 ml-auto right_column">
-						<!-- details -->
-							<div id='details'>
-								<?php include "../app_include/{$pageType}.html"; ?>
-							</div>
-						<!-- /details -->
-						
-						<!-- images -->
-							<div id='images'>
-								<div id="photos">
-									<div class="photo"><a data-toggle="modal" href="#gallery"><img /></a></div>
-									<div class="photo"><a data-toggle="modal" href="#gallery"><img /></a></div>
-								</div>
-								<div class="more-photo-link"><a data-toggle="modal" href="#gallery" class="details"></a></div>
-							</div>
-						<!-- /images -->
+						<?php SubView::detailsCard() ?>
 						
 						<!-- districts -->
 							<div id='districts'>
 								<p><span class="district-hdr">Community District</span><a id="details-cd" class="details"></a></p>
+								<p><span class="district-hdr">Election District</span><a id="details-ed" class="details"></a></p>
 								<p><span class="district-hdr">Police Precinct</span><a id="details-pp" class="details"></a></p>
 								<p><span class="district-hdr">Sanitation District</span><a id="details-dsny" class="details"></a></p>
 								<p><span class="district-hdr">Fire Battilion</span><a id="details-fb" class="details"></a></p>
@@ -303,6 +287,10 @@ function view($pageType)
 					<div class="custom-control custom-switch">
 					  <input type="checkbox" class="custom-control-input" id="cd-switch">
 					  <label class="custom-control-label" for="cd-switch">Community Districts<hr class="border-sample"></label>
+					</div>
+					<div class="custom-control custom-switch">
+					  <input type="checkbox" class="custom-control-input" id="ed-switch">
+					  <label class="custom-control-label" for="ed-switch">Election Districts<hr class="border-sample"></label>
 					</div>
 					<div class="custom-control custom-switch">
 					  <input type="checkbox" class="custom-control-input" id="pp-switch">
@@ -369,6 +357,11 @@ function view($pageType)
 	<?php if ($_GET['id']) : ?>
 		<script>
 			defaultRequest = {'id': '<?php echo $_GET['id']; ?>'}
+		</script>
+	<?php endif; ?>
+	<?php if ($_GET['addr']) : ?>
+		<script>
+			defaultRequest = {'address': '<?php echo $_GET['addr']; ?>'}
 		</script>
 	<?php endif; ?>
 	<script src="js/script.js"></script>

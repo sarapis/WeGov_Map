@@ -4,7 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic291bmRwcmVzcyIsImEiOiJjazY1OTF3cXIwbjZyM3Btc
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
-    center: [-73.96, 40.65],
+    center: [-73.957, 40.727],
 	//pitch: 60,
     zoom: 11
 });
@@ -48,8 +48,8 @@ var domMarkers = [];
 var mapMarkers = [];
 var geojson = {'type': 'FeatureCollection', 'features': []};
 var boundariesList = {};
-var codes = ['cd', 'pp', 'dsny', 'fb', 'sd', 'hc', 'cc', 'nycongress', 'sa', 'ss', 'bid', 'nta', 'zipcode'];
-var clrs = ['#bc2b32', '#be7957', '#d2ac6d', '#77aa98', '#3e7864', '#085732', '#9abe0c', '#f3bd1c', '#f5912f', '#dc2118', '#39a6a5', '#185892', '#7a7e5a'];
+var codes = ['cd', 'ed', 'pp', 'dsny', 'fb', 'sd', 'hc', 'cc', 'nycongress', 'sa', 'ss', 'bid', 'nta', 'zipcode'];
+var clrs = ['#bc2b32', '#a881c2', '#be7957', '#d2ac6d', '#77aa98', '#3e7864', '#085732', '#9abe0c', '#f3bd1c', '#f5912f', '#dc2118', '#39a6a5', '#185892', '#7a7e5a'];
 
 
 map.on('load', function() {
@@ -132,17 +132,12 @@ function dataRequest(trg, q) {
 	markersClean();
 	var req = `trg=${trg}&${jQuery.param(q)}`;
 	console.log(req);
-	$.get(`./data/container.php?${req}`,
-		function(container) {
-			//console.log(container);
-			map.jumpTo(container);
-		}
-	);
 	//console.log(`./data/submissions.php?trg=${trg}&${jQuery.param(q)}`);
 	$.get(`./data/submissions.php?${req}`, 
 		function(data) {
-			geojson = data;
-			//console.log(data);
+			geojson = data.geojson;
+			if (data.container)
+				map.jumpTo(data.container);
 			markersGen();
 		}
 	);
@@ -220,15 +215,20 @@ function displayDetails(dd) {
 		}
 	}
 	
+	if (dd['addr'])
+		$('#details-addr').val(dd['addr'])
+	
 	// search by current property boundary links
-	var bType;
-	for (let i in codes) {
-		bType = codes[i];
-		if ($(`#details-${bType}`)) {
-			$(`#details-${bType}`).unbind();
-			$(`#details-${bType}`).click(function(){
-				dataRequest(context, {'btype': codes[i], 'boundary': dd[codes[i]]});
-			});
+	if (dd['type'] != 'Boundaries') {
+		var bType;
+		for (let i in codes) {
+			bType = codes[i];
+			if ($(`#details-${bType}`)) {
+				$(`#details-${bType}`).unbind();
+				$(`#details-${bType}`).click(function(){
+					dataRequest(context, {'btype': codes[i], 'boundary': dd[codes[i]]});
+				});
+			}
 		}
 	}
 
@@ -356,6 +356,13 @@ function searchByBoundary() {
 }
 
 
+function searchBoundariesByAddress() {
+	var addr = $('#address').val();
+	$('#address').val('');
+	dataRequest(context, {'address': addr});
+}
+
+
 function alert(color, hdr, body) {
 	$('#alert rect').attr('fill', color);
 	$('#alert-header').text(hdr);
@@ -369,5 +376,5 @@ function copyLink() {
 	el.select();
 	el.setSelectionRange(0, 99999);
 	document.execCommand("copy");
-	alert('green', 'Link copied', el.value);
+	alert('green', 'Link copied', el.value.length > 49 ? el.value.substring(0, 47) + '...' : el.value);
 }

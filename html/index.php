@@ -1,2 +1,2 @@
 <?php
-header('Location: covidprojects.php');
+header('Location: cityboundaries.php');

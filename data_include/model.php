@@ -33,7 +33,9 @@ class Model
 	
 	function getCards($pp)
 	{
-		return $this->mapResults($this->apiRequest($pp));
+		return $pp['trg'] == 'cb'
+				? [$this->boundaryRequest($pp)]
+				: $this->apiRequest($pp);
 	}
 	
 	function getCentroid($pp)
@@ -65,7 +67,7 @@ class Model
 		return $rr;
 	}
 	
-	function mapResults($raw)
+	function mapGeoJson($raw)
 	{
 		$rr = ['type' => 'FeatureCollection', 'features' => []];
 		foreach ($raw as $r)
@@ -75,13 +77,16 @@ class Model
 					'coordinates' =>  [$r['lng'], $r['lat']]
 				];
 			$ii = array_filter([$r['img1'], $r['img2'], $r['img3'], $r['img4']], 'strlen');
+			$ll = [
+							'Placard Abuse' => ['path' => 'placabuse.php', 'req' => "?id={$r['id']}"],
+							'Capital Project' => ['path' => 'capprojects.php', 'req' => "?id={$r['id']}"],
+							'Boundaries' => ['path' => 'cityboundaries.php', 'req' => '?addr=' . urlencode($r['addr'])],
+						];
+			$url = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 			$r = [
 				'coordinates' => "{$r['lng']}, {$r['lat']}",
 				'images' => ['main' => (array)array_chunk($ii, 2)[0], 'additional' => (array)array_chunk($ii, 2)[1]],
-				'permalink' => preg_replace( '~data/submissions.php.*~si', 
-											($r['type'] == 'Placard Abuse' ? 'placabuse.php' : 'capprojects.php'), 
-											"{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}"
-										) . "?id={$r['id']}"
+				'permalink' => preg_replace('~data/submissions.php.*~si', $ll[$r['type']]['path'], $url) . $ll[$r['type']]['req']
 			] + $r;
 			$r = array_diff_key($r, ['lat' => null, 'lng' => null, 'img1' => null, 'img2' => null, 'img3' => null, 'img4' => null]);
 			$rr['features'][] = [
@@ -98,7 +103,15 @@ class Model
 	{
 		
 	}
-	
+
+	function boundaryRequest($pp)
+	{
+		return $pp['address']
+			? Geoclient::match($pp['address']) + ['type' => 'Boundaries', 'addr' => $pp['address']]
+			: [];
+	}
+		
+		
 ///// covid ////////////////////////////////////////////////
 
 	function getCovidPrj($nta)

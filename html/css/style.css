@@ -26,20 +26,29 @@ body {
 		height: 150px; */
 		z-index: 10;
 	}
+	
 	#searchControls button.dropdown-toggle, #clearFilters {
 		margin: 3px;
 		background: #fff;
 		color: #007bff;
 		/* background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=); */
 	}
+	
 	#searchControls button.dropdown-toggle:hover
 	{
 		background: #3d85c6;
 		color: #fff;
 	}
+	
 	.dropright .dropdown-toggle::after {
 		background:none;
 	}
+	
+	#addon-submit1 {
+		background: #fff;
+		color: #007bff;
+	}	
+	
 	#dropdownPlate, #dropdownPID, #dropdownDates, #dropdownBoundary {
 		margin-left: 0;
 		width: 300px;
@@ -73,14 +82,23 @@ body {
 
 /* toasts */
 	#toasts {
-		position: 20px;
+		position: absolute;
 		left: 5px;
-		/* top: 135px;
+		top: 135px;
 		min-height: 200px;
-		min-width: 400px; */
+		min-width: 400px;
 		z-index: 2;
 		pointer-events: none;
 	}
+	
+	.toast-onerow {
+		display: inline-block;
+		width: 348px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;		
+	}
+	
 /*----------*/
 
 
@@ -155,6 +173,12 @@ body {
 	
 	#details .details {
 		font-size: 11px;
+		margin: 0;
+		padding: 0px 5px;
+	}
+	
+	#details-addr {
+		font-size: 13px;
 		margin: 0;
 		padding: 0px 5px;
 	}
@@ -284,7 +308,7 @@ body {
 		height: 300px; */
 		background:#eeeeeea1;
 		z-index: 1;
-		    height: 175px;
+		    height: 260px;
     overflow: auto;
 	}
 	#districts p {

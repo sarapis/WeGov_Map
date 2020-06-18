@@ -22,26 +22,6 @@ $model->db->replace('dd', $newDS);
 echo "updated submissions: " . count($newDS) . "\n";
 flush();
 
-/*
-$cprjRecs = Airtable::getAll('covid_prj');
-echo count($cprjRecs) . ' ';
-$cprj = [];
-foreach ($cprjRecs as $rec)
-	$cprj[] = normRec($rec, 'covid_prj');
-$model->db->replace('covid_prj', $cprj);
-echo "updated covid prjs: " . count($cprj) . "\n";
-flush();
-
-
-$cpodsRecs = Airtable::getAll('covid_pods');
-echo count($cpodsRecs) . ' ';
-$cpods = [];
-foreach ($cpodsRecs as $rec)
-	$cpods[] = normRec($rec, 'covid_pods');
-$model->db->replace('covid_pods', $cpods);
-echo "updated covid pods: " . count($cpods) . "\n";
-flush();
-*/
 
 
 // if lat and lng not present in Airtable rec - trying to get them from Geoclient API
@@ -57,7 +37,7 @@ function mergeRec($aCard, $gCard)
 	return array_merge($aCard, $gCard);
 }
 
-/*
+
 function normRec($r, $type)
 {
 	$fff = [
@@ -67,4 +47,3 @@ function normRec($r, $type)
 		];
 	return $r + array_fill_keys($fff[$type], null);
 }
-*/
