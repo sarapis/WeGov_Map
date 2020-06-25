@@ -76,6 +76,32 @@ body {
 	}
 	
 	
+	#searchControls-er {
+		position: absolute;
+		padding: 10px;
+		left: 5px;
+		top: 5px;
+		width: 50%;
+		height: 200px;
+		z-index: 10;
+		background:#eeeeee99;
+	}
+		
+	#searchControls-er label {
+		/*color: #007bff;*/
+		font-size:14px;
+		display:block;
+		margin-right: 10px;
+		position:relative;
+		top: 4px;
+	}
+	
+	#searchControls-er .form-check-label {
+		font-size:13px;
+		position:relative;
+		top: -1px;
+
+	}
 	
 /*----------*/
 
@@ -108,11 +134,11 @@ body {
 /* toggles */
 	#toggles {
 		position: absolute;
-		padding: 20px;
+		padding: 10px 20px;
 		left: 5px;
 		bottom: 35px;
 		width: 310px;
-		height: 350px;
+		height: 370px;
 		background:#eeeeeea1;
 		z-index: 1;
 	}
@@ -238,6 +264,27 @@ body {
 		text-overflow: ellipsis; 
 		overflow: hidden; 
 	}
+
+	.details-header {
+		font-size: 13px;
+		font-weight: 600;
+		margin: 0;
+		padding: 2px 3px;
+	}
+	
+	#details th {
+		font-size: 12px;
+		margin: 0;
+		padding: 0px 3px;
+	}
+	
+	#details td {
+		font-size: 12px;
+		margin: 0;
+		padding: 0px 3px;
+	}
+	
+
 	
 /*----------*/
 

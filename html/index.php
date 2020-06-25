@@ -1,2 +1,2 @@
 <?php
-header('Location: cityboundaries.php');
+header('Location: electionresults.php');

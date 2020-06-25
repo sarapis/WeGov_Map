@@ -61,13 +61,14 @@ map.on('load', function() {
 	if (typeof defaultRequest == 'undefined' || $.isEmptyObject(defaultRequest)) {
 		defaultRequest = {'dates': '01 Jan 2020 - today'}
 	}
-	dataRequest(context, defaultRequest);
-
-	window.setTimeout(function (){	
-			$('label[for="cd-switch"]').click();
-		}, 2000
+	if (['pa', 'cp', 'cb'].includes(context)) {
+		dataRequest(context, defaultRequest);
 		
-	);
+		window.setTimeout(function (){	
+				$('label[for="cd-switch"]').click();
+			}, 2000
+		);
+	}
 });
 
 

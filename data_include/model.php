@@ -67,38 +67,7 @@ class Model
 		return $rr;
 	}
 	
-	function mapGeoJson($raw)
-	{
-		$rr = ['type' => 'FeatureCollection', 'features' => []];
-		foreach ($raw as $r)
-		{
-			$g = [
-					'type' =>  'Point',
-					'coordinates' =>  [$r['lng'], $r['lat']]
-				];
-			$ii = array_filter([$r['img1'], $r['img2'], $r['img3'], $r['img4']], 'strlen');
-			$ll = [
-							'Placard Abuse' => ['path' => 'placabuse.php', 'req' => "?id={$r['id']}"],
-							'Capital Project' => ['path' => 'capprojects.php', 'req' => "?id={$r['id']}"],
-							'Boundaries' => ['path' => 'cityboundaries.php', 'req' => '?addr=' . urlencode($r['addr'])],
-						];
-			$url = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-			$r = [
-				'coordinates' => "{$r['lng']}, {$r['lat']}",
-				'images' => ['main' => (array)array_chunk($ii, 2)[0], 'additional' => (array)array_chunk($ii, 2)[1]],
-				'permalink' => preg_replace('~data/submissions.php.*~si', $ll[$r['type']]['path'], $url) . $ll[$r['type']]['req']
-			] + $r;
-			$r = array_diff_key($r, ['lat' => null, 'lng' => null, 'img1' => null, 'img2' => null, 'img3' => null, 'img4' => null]);
-			$rr['features'][] = [
-				'type' =>  'Feature',
-				'properties' => $r,
-				'geometry' => $g
-			];
-		}
-		//print_r($rr);
-		return $rr;
-	}
-	
+
 	function mapCentroid($raw)
 	{
 		
@@ -162,5 +131,41 @@ class Model
 		return $this->db->q("SELECT nta FROM covid_prj  WHERE nta NOT LIKE ''
 							UNION 
 							SELECT nta FROM covid_pods WHERE nta NOT LIKE ''");
+	}
+	
+///// elections results ////////////////////////////////////////////////
+
+	function erEvents()
+	{
+		$rr = [];
+		foreach ($this->db->q('SELECT event,position,party FROM el_events_list ORDER BY id DESC') as $r)
+			$rr[implode('|', $r)] = implode(' / ', array_filter($r));
+		return $rr;
+	}
+
+	function erAds()
+	{
+		return $this->db->q('SELECT ad FROM el_ad_list');
+	}
+
+	function erAdeds()
+	{
+		return $this->db->q('SELECT aded FROM el_aded_list');
+	}
+
+	function erCountys()
+	{
+		return $this->db->q('SELECT county FROM el_county_list');
+	}
+
+	function erResults($ev, $division)
+	{
+		list($event, $position, $party) = explode('|', $ev);
+		$q = [
+			'ad' => 'ad as loc, MIN(perc_ad) as perc',
+			'aded' => 'aded as loc, MIN(perc_aded) as perc',
+			'county' => 'county as loc, MIN(perc_county) as perc',
+		][$division];
+		return $this->db->q("SELECT participant,SUM(tally) as tally,{$q} FROM el_results WHERE event LIKE '{$event}' AND position LIKE '{$position}' AND party LIKE '{$party}' GROUP BY participant, {$division} ORDER BY perc DESC");
 	}
 }

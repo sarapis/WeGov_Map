@@ -120,11 +120,11 @@
    }
    #toggles {
 		position: relative;
-		padding: 20px;
+		padding: 10px 20px;
 		left: 15px;
 		bottom: -27px;
 		width: 96%;
-		height: 350px;
+		height: 370px;
 		background: #eee;
 		z-index: 1;
 	}

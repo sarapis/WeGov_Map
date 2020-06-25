@@ -6,7 +6,7 @@ $model = new Model();
 $data = $request ? $model->getCards($request) : [];
 
 header('content-type: application/json');
-echo json_encode(['geojson' => $request ? $model->mapGeoJson($data) : [], 'container' => calcContainer($data)]);
+echo json_encode(['geojson' => $request ? mapGeoJson($data) : [], 'container' => calcContainer($data)]);
 
 
 
@@ -100,4 +100,36 @@ function mapScale($dLat, $dLon)
 		}
 	//print_r(compact(['dLat', 'dLon', 'sLat', 'sLon']));
 	return min($sLat, $sLon) - 1;
+}
+
+function mapGeoJson($raw)
+{
+	$rr = ['type' => 'FeatureCollection', 'features' => []];
+	foreach ($raw as $r)
+	{
+		$g = [
+				'type' =>  'Point',
+				'coordinates' =>  [$r['lng'], $r['lat']]
+			];
+		$ii = array_filter([$r['img1'], $r['img2'], $r['img3'], $r['img4']], 'strlen');
+		$ll = [
+						'Placard Abuse' => ['path' => 'placabuse.php', 'req' => "?id={$r['id']}"],
+						'Capital Project' => ['path' => 'capprojects.php', 'req' => "?id={$r['id']}"],
+						'Boundaries' => ['path' => 'cityboundaries.php', 'req' => '?addr=' . urlencode($r['addr'])],
+					];
+		$url = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+		$r = [
+			'coordinates' => "{$r['lng']}, {$r['lat']}",
+			'images' => ['main' => (array)array_chunk($ii, 2)[0], 'additional' => (array)array_chunk($ii, 2)[1]],
+			'permalink' => preg_replace('~data/submissions.php.*~si', $ll[$r['type']]['path'], $url) . $ll[$r['type']]['req']
+		] + $r;
+		$r = array_diff_key($r, ['lat' => null, 'lng' => null, 'img1' => null, 'img2' => null, 'img3' => null, 'img4' => null]);
+		$rr['features'][] = [
+			'type' =>  'Feature',
+			'properties' => $r,
+			'geometry' => $g
+		];
+	}
+	//print_r($rr);
+	return $rr;
 }

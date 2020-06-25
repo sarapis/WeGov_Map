@@ -34,5 +34,30 @@ class SubView
 	<!-- /details -->
 	<?php
 	}
+	
+	static function districtsCard()
+	{
+	?>
+						<!-- districts -->
+							<div id='districts'>
+								<p><span class="district-hdr">Community District</span><a id="details-cd" class="details"></a></p>
+								<p><span class="district-hdr">Election District</span><a id="details-ed" class="details"></a></p>
+								<p><span class="district-hdr">Police Precinct</span><a id="details-pp" class="details"></a></p>
+								<p><span class="district-hdr">Sanitation District</span><a id="details-dsny" class="details"></a></p>
+								<p><span class="district-hdr">Fire Battilion</span><a id="details-fb" class="details"></a></p>
+								<p><span class="district-hdr">School District</span><a id="details-sd" class="details"></a></p>
+								<p><span class="district-hdr">Health Center District</span><a id="details-hc" class="details"></a></p>
+								<p><span class="district-hdr">City Council District</span><a id="details-cc" class="details"></a></p>
+								<p><span class="district-hdr">Congressional District</span><a id="details-nycongress" class="details"></a></p>
+								<p><span class="district-hdr">State Assembly District</span><a id="details-sa" class="details"></a></p>
+								<p><span class="district-hdr">State Senate District</span><a id="details-ss" class="details"></a></p>
+								<!-- <p><span class="district-hdr">Business Improvement District</span><a id="details-bid" class="details"></a></p>	-->
+								<p><span class="district-hdr">Zip Code</span><a id="details-zipcode" class="details"></a></p>
+								<p><span class="district-hdr">Neighborhood Tabulation Area</span><a id="details-nta" class="details"></a></p>
+							</div>
+						<!-- /districts -->
+	<?php
+	}
+
 }
 

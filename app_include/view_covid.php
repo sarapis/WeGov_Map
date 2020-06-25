@@ -97,6 +97,7 @@ function view($embeddable=false)
 				<div class="submenu_div">
 					<div class="container">
 						<span class="badge badge-light title_top_header" >Maps</span>
+						<a class="menu_link" href="electionresults.php">Election Results</a>
 						<a class="menu_link" href="cityboundaries.php">City Boundaries</a>
 						<a class="menu_link active">Mutual Aid Groups</a>
 						<a class="menu_link" href="placabuse.php">Placard Abuse</a>

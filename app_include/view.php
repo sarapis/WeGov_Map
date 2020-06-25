@@ -91,6 +91,7 @@ function view()
 			<div class="submenu_div">
 				<div class="container">
 					<span class="badge badge-light title_top_header" >Maps</span>
+					<a class="menu_link<?php echo SubView::$type == 'er' ? ' active' : '" href="electionresults.php'; ?>">Election Results</a>
 					<a class="menu_link<?php echo SubView::$type == 'cb' ? ' active' : '" href="cityboundaries.php'; ?>">City Boundaries</a>
 					<a class="menu_link" href="covidprojects.php">Mutual Aid Groups</a>
 					<a class="menu_link<?php echo SubView::$type == 'pa' ? ' active' : '" href="placabuse.php'; ?>">Placard Abuse</a>
@@ -261,24 +262,9 @@ function view()
 					<div class=" col-lg-3 col-md-3 col-sm-6 ml-auto right_column">
 						<?php SubView::detailsCard() ?>
 						
-						<!-- districts -->
-							<div id='districts'>
-								<p><span class="district-hdr">Community District</span><a id="details-cd" class="details"></a></p>
-								<p><span class="district-hdr">Election District</span><a id="details-ed" class="details"></a></p>
-								<p><span class="district-hdr">Police Precinct</span><a id="details-pp" class="details"></a></p>
-								<p><span class="district-hdr">Sanitation District</span><a id="details-dsny" class="details"></a></p>
-								<p><span class="district-hdr">Fire Battilion</span><a id="details-fb" class="details"></a></p>
-								<p><span class="district-hdr">School District</span><a id="details-sd" class="details"></a></p>
-								<p><span class="district-hdr">Health Center District</span><a id="details-hc" class="details"></a></p>
-								<p><span class="district-hdr">City Council District</span><a id="details-cc" class="details"></a></p>
-								<p><span class="district-hdr">Congressional District</span><a id="details-nycongress" class="details"></a></p>
-								<p><span class="district-hdr">State Assembly District</span><a id="details-sa" class="details"></a></p>
-								<p><span class="district-hdr">State Senate District</span><a id="details-ss" class="details"></a></p>
-								<!-- <p><span class="district-hdr">Business Improvement District</span><a id="details-bid" class="details"></a></p>	-->
-								<p><span class="district-hdr">Zip Code</span><a id="details-zipcode" class="details"></a></p>
-								<p><span class="district-hdr">Neighborhood Tabulation Area</span><a id="details-nta" class="details"></a></p>
-							</div>
-						<!-- /districts -->
+						<?php if (method_exists(SubView, 'districtsCard')) : ?>
+							<?php SubView::districtsCard() ?>
+						<?php endif; ?>
 					</div>
 				</div>
 				
@@ -365,6 +351,9 @@ function view()
 		</script>
 	<?php endif; ?>
 	<script src="js/script.js"></script>
+	<?php if (method_exists(SubView, 'script')) : ?>
+		<?php SubView::script(); ?>
+	<?php endif; ?>
 	<script>
 	  	function openNav() {
 			document.getElementById("mySidenav").style.width = "250px";
