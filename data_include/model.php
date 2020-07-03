@@ -138,34 +138,71 @@ class Model
 	function erEvents()
 	{
 		$rr = [];
-		foreach ($this->db->q('SELECT event,position,party FROM el_events_list ORDER BY id DESC') as $r)
-			$rr[implode('|', $r)] = implode(' / ', array_filter($r));
+		foreach ($this->db->q('SELECT event,position,party,district FROM el_events_list ORDER BY id DESC') as $r)
+			$rr[implode('|', [$r['event'], $r['position'], $r['party']])] = implode(' / ', array_filter([$r['event'], $r['position'], $r['party']])) . " ({$r['district']})";
 		return $rr;
-	}
-
-	function erAds()
-	{
-		return $this->db->q('SELECT ad FROM el_ad_list');
-	}
-
-	function erAdeds()
-	{
-		return $this->db->q('SELECT aded FROM el_aded_list');
-	}
-
-	function erCountys()
-	{
-		return $this->db->q('SELECT county FROM el_county_list');
 	}
 
 	function erResults($ev, $division)
 	{
 		list($event, $position, $party) = explode('|', $ev);
 		$q = [
-			'ad' => 'ad as loc, MIN(perc_ad) as perc',
-			'aded' => 'aded as loc, MIN(perc_aded) as perc',
-			'county' => 'county as loc, MIN(perc_county) as perc',
+			'ad' => 'ad as loc, MAX(perc_ad) as perc',
+			'aded' => 'aded as loc, MAX(perc_aded) as perc',
+			'county' => 'county as loc, MAX(perc_county) as perc',
 		][$division];
-		return $this->db->q("SELECT participant,SUM(tally) as tally,{$q} FROM el_results WHERE event LIKE '{$event}' AND position LIKE '{$position}' AND party LIKE '{$party}' GROUP BY participant, {$division} ORDER BY perc DESC");
+		return array_merge(
+			$this->db->q("SELECT participant,SUM(tally) as tally,{$q} FROM el_results WHERE event LIKE '{$event}' AND position LIKE '{$position}' AND party LIKE '{$party}' GROUP BY participant, {$division} ORDER BY perc DESC"),
+			$this->db->q("SELECT DISTINCT msg,{$division} as loc FROM el_resultsm WHERE event LIKE '{$event}' AND position LIKE '{$position}' AND party LIKE '{$party}'")
+		);
+	}
+
+	function erResultsCSV($ev, $division)
+	{
+		list($event, $position, $party) = explode('|', $ev);
+		$q = [
+			'ad' => 'ad, MAX(perc_ad) as percentage',
+			'aded' => 'aded, MAX(perc_aded) as percentage',
+			'county' => 'county, MAX(perc_county) as percentage',
+		][$division];
+		return $this->db->q("SELECT participant,SUM(tally) as tally,{$q} FROM el_results WHERE event LIKE '{$event}' AND position LIKE '{$position}' AND party LIKE '{$party}' GROUP BY participant, {$division} ORDER BY {$division}, percentage DESC");
+	}
+	
+	function erRanks($ev, $division)
+	{
+		list($event, $position, $party) = explode('|', $ev);
+		return array_merge(
+			$this->db->q("SELECT 
+				participant,
+				SUM(tally) as tally,
+				{$division} as loc,
+				MAX(perc_{$division}) as perc,
+				ROW_NUMBER() OVER (
+				  PARTITION BY participant
+				  ORDER BY perc DESC) rank
+			FROM el_results
+			WHERE event LIKE '{$event}' AND position LIKE '{$position}' AND party LIKE '{$party}'
+			GROUP BY participant, {$division}
+			ORDER BY rank, perc DESC"),
+			$this->db->q("SELECT DISTINCT msg,{$division} as loc FROM el_resultsm WHERE event LIKE '{$event}' AND position LIKE '{$position}' AND party LIKE '{$party}'")
+		);
+	}
+
+	function erRanksCSV($ev, $division)
+	{
+		list($event, $position, $party) = explode('|', $ev);
+		return 
+			$this->db->q("SELECT 
+				participant,
+				SUM(tally) as tally,
+				{$division},
+				MAX(perc_{$division}) as percentage,
+				ROW_NUMBER() OVER (
+				  PARTITION BY participant
+				  ORDER BY percentage DESC) district_rank
+			FROM el_results
+			WHERE event LIKE '{$event}' AND position LIKE '{$position}' AND party LIKE '{$party}'
+			GROUP BY participant, {$division}
+			ORDER BY district_rank, percentage DESC");
 	}
 }

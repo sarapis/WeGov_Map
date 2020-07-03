@@ -7,7 +7,7 @@ function view()
 
 <head>
     <meta charset='utf-8' />
-    <title>Placard Abuse</title>
+    <title>WeGov Maps</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width,shrink-to-fit=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
@@ -141,7 +141,7 @@ function view()
 					<div  class="col-lg-9 col-md-9 col-sm-12 left_column">
 						<!-- search form -->
 						<div id='searchControls'>
-							<?php if (method_exists(SubView, 'searchForm')) : ?>
+							<?php if (method_exists('SubView', 'searchForm')) : ?>
 								<?php SubView::searchForm(); ?>
 								
 							<?php else : ?>
@@ -262,7 +262,7 @@ function view()
 					<div class=" col-lg-3 col-md-3 col-sm-6 ml-auto right_column">
 						<?php SubView::detailsCard() ?>
 						
-						<?php if (method_exists(SubView, 'districtsCard')) : ?>
+						<?php if (method_exists('SubView', 'districtsCard')) : ?>
 							<?php SubView::districtsCard() ?>
 						<?php endif; ?>
 					</div>
@@ -351,7 +351,7 @@ function view()
 		</script>
 	<?php endif; ?>
 	<script src="js/script.js"></script>
-	<?php if (method_exists(SubView, 'script')) : ?>
+	<?php if (method_exists('SubView', 'script')) : ?>
 		<?php SubView::script(); ?>
 	<?php endif; ?>
 	<script>

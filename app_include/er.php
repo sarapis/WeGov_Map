@@ -10,12 +10,23 @@ class SubView
 	</div>
 	<div  id='searchControls-er'>
 		<div class="form-group form-group-sm col pl-0 ml-0 my-1">
-			<label for="event">Election / Position</label>
+			<label for="event">Contest</label>
 			<select class="form-control form-control-sm" id="event" name="event">
 			</select>
 		</div>		
 		<div class="form-group form-group-sm col pl-0 ml-0 my-1">
-			<label for="aggr">Aggregation</label>
+			<label>Map Type</label>
+			<div class="form-check form-check-inline">
+			  <input class="form-check-input" type="radio" name="display" id="disp1" value="er" checked>
+			  <label class="form-check-label" for="disp1">Election Results</label>
+			</div>
+			<div class="form-check form-check-inline">
+			  <input class="form-check-input" type="radio" name="display" id="disp2" value="su">
+			  <label class="form-check-label" for="disp2">Candidates Top Support</label>
+			</div>
+		</div>
+		<div class="form-group form-group-sm col pl-0 ml-0 my-1">
+			<label for="aggr">Geography</label>
 			<div class="form-check form-check-inline">
 			  <input class="form-check-input" type="radio" name="aggregation" id="aggr1" value="ad" checked>
 			  <label class="form-check-label" for="aggr1">Assembly District</label>
@@ -29,28 +40,37 @@ class SubView
 			  <label class="form-check-label" for="aggr3">County</label>
 			</div>
 		</div>
-		<label for="display">Display</label>
+		<label>Style Options</label>
 		
 		<div class="row mx-0">
-			<div class="form-check form-check-inline col-5 mr-0">
-				<label class="form-check-label">Area Fill</label>
-				<div class="custom-control custom-switch">
-				  <input type="checkbox" class="custom-control-input" id="nameSw">
-				  <label class="form-check-label custom-control-label" for="nameSw">Candidate Name</label>
-				</div>
-			</div>
-			<div class="form-check form-check-inline col-4 mr-0">
-				<label class="form-check-label">Solid</label>
+			<div class="form-check form-check-inline col mr-0">
+				<label class="form-check-label" style="position:relative; top: -3px;">Solid Fill</label>
 				<div class="custom-control custom-switch">
 				  <input type="checkbox" class="custom-control-input" id="shadSw">
-				  <label class="form-check-label custom-control-label" for="shadSw">Shading</label>
+				  <label class="form-check-label custom-control-label" for="shadSw">Shading Fill</label>
 				</div>
 			</div>
+			<div class="form-check form-check-inline col mr-0">
+				<label class="form-check-label" style="position:relative; top: -3px;">White Text</label>
+				<div class="custom-control custom-switch">
+				  <input type="checkbox" class="custom-control-input" id="txtSw">
+				  <label class="form-check-label custom-control-label" for="txtSw">Black Text</label>
+				</div>
+			</div>
+			<div class="form-check form-check-inline col-3 mr-0">
+			</div>
 		</div>
-		<div style="position:absolute; right: 20px; bottom: 20px; padding:0; margin:0;">
-			<button class="btn btn-outline-primary" id="addon-submit1" onclick="erRequest();">Search</button>
+		<div style="position:absolute; right: 20px; bottom: 10px; padding:0; margin:0;">
+			<button class="btn btn-sm btn-info" id="addon-csv" onclick="erRequestCSV();" style="min-width: 60px;">CSV</button>
+			<button class="btn btn-sm btn-outline-primary" id="addon-submit1" onclick="erRequest();" style="min-width: 60px;">Draw</button>
 		</div>
-			
+		<form id="csv-downloader" action="./data/electionresults.php">
+			<input type="hidden" name="trg" value="csv">
+			<input type="hidden" name="event">
+			<input type="hidden" name="division">
+			<input type="hidden" name="display">
+			<input type="hidden" name="design">
+		</form>
 	<?php
 	}
 
@@ -94,8 +114,8 @@ class SubView
 			//loadER('General Election 2018 - 11/06/2018|Governor/Lieutenant Governor|', 'ad', 'fill-shading');
 		});
 
-		function loadER(event, division, display) {
-			var req = {'event': event, 'division': division, 'display': display, 'trg': 'expr'}
+		function loadER(event, division, display, design, txtcolor) {
+			var req = {'event': event, 'division': division, 'display': display, 'design': design, 'trg': 'expr'}
 			
 			$.get('./data/electionresults.php', req, function (resp, status, xhr) {
 				['er', 'erL', 'erS', 'erH'].forEach(function (id, idx) {
@@ -111,7 +131,7 @@ class SubView
 				});
 
 				
-				if (['fill-shading', 'fill-solid'].includes(display)) {
+				if (['fill-shading', 'fill-solid'].includes(design)) {
 					
 					map.addLayer(
 						{
@@ -126,7 +146,32 @@ class SubView
 						'waterway-label'
 					);
 					
-				} else {
+					map.addLayer(
+						{
+							'id': 'erS',
+							'type': 'symbol',
+							'source': 'er',
+							'paint': {
+								'text-color': txtcolor == 'white' ? "rgb(255,255,255)" : "rgb(0,0,0)",
+								"text-halo-color": "hsl(0, 0%, 100%)",
+								"text-halo-width": 0.2,
+								"text-halo-blur": 1
+							},
+							"layout": {
+								'text-field': '{winnerEnh}',
+								'text-size': {
+									"base": 1,
+									"stops": [
+										[12, 12],
+										[16, 16]
+									]
+								},
+							},
+						},
+						'waterway-label'
+					);
+					
+				}/* else {
 				
 					map.addLayer(
 						{
@@ -182,7 +227,7 @@ class SubView
 						'waterway-label'
 					);
 				}
-				
+				*/
 				map.addLayer(
 					{
 						'id': 'erH',
@@ -190,8 +235,8 @@ class SubView
 						'source': 'er',
 						'layout': {},
 						'paint': {
-							'fill-color': 'rgb(0,0,0)',
-							'fill-opacity': 0.2
+							'fill-color': 'rgb(230,230,230)',
+							'fill-opacity': 0.5
 						},
 						'filter': ['in', 'nameCol', '']
 					},
@@ -214,6 +259,10 @@ class SubView
 			$('.loc-hdr').html(tt[div]);
 			$('.loc-title').html(properties['nameCol']);
 			if (typeof properties.results == 'undefined') {
+				if (typeof properties.msg == 'undefined') 
+					$('#details .no-results').text('No results')
+				else
+					$('#details .no-results').text(properties.msg);
 				$('#details .no-results').show();
 				$('#details table').hide();
 			} else {
@@ -228,11 +277,26 @@ class SubView
 		function erRequest() {
 			var ev = $('#event option:selected').val();
 			var ag = $('input[name="aggregation"]:checked').val();
-			var name = $('#nameSw').is(':checked') ? 'names' : 'fill';
+			var disp = $('input[name="display"]:checked').val();
+			var shad = $('#shadSw').is(':checked') ? 'shading' : 'solid';
+			var txtcol = $('#txtSw').is(':checked') ? 'black' : 'white';
+			
+			//console.log([ev, ag, disp, name, shad, `${name}-${shad}`]);
+			loadER(ev, ag, disp, `fill-${shad}`, txtcol);
+		}
+		
+		function erRequestCSV() {
+			var ev = $('#event option:selected').val();
+			var ag = $('input[name="aggregation"]:checked').val();
+			var disp = $('input[name="display"]:checked').val();
+			//var name = $('#nameSw').is(':checked') ? 'names' : 'fill';
 			var shad = $('#shadSw').is(':checked') ? 'shading' : 'solid';
 			
-			console.log([ev, ag, name, shad, `${name}-${shad}`]);
-			loadER(ev, ag, `${name}-${shad}`);
+			$('#csv-downloader input[name="event"]').val(ev);
+			$('#csv-downloader input[name="division"]').val(ag);
+			$('#csv-downloader input[name="display"]').val(disp);
+			$('#csv-downloader input[name="design"]').val(`fill-${shad}`);
+			$('#csv-downloader').submit();
 		}
 		
 	</script>

@@ -84,6 +84,7 @@ class Db
 	function insert_ignore($table, $arr){
 		if (count($arr) == 0) return;
 		$q = sprintf("INSERT IGNORE INTO %s %s VALUES %s", $table, $this->flist($arr), $this->vlist($arr));
+		//echo "{$q}\n";
 		return $this->qi($q);
 	}
 
