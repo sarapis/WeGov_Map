@@ -56,25 +56,32 @@ function view()
 										<span>Advocacy</span>
 									</a>
 									<ul class="dropdown-menu">
-										<li><a href="https://wegov.nyc/211-4-nyc/" class="menu_link">Searchable Safety Net</a></li>
-										<li><a href="https://wegov.nyc/open-engaging-effective-government/" class="menu_link">Digital Transformation</a></li>
-										<li><a href="https://wegov.nyc/nymeta/" class="menu_link">Metro-Regional Leadership</a></li>
+										<li>
+											<a href='https://wegov.nyc/advocacy/safety-net/' class='menu_link'>Searchable Safety Net</a>
+										</li>
+										<li>
+											<a href='https://wegov.nyc/advocacy/digital-government/' class='menu_link'>Digital Government</a>
+										</li>
+										<li>
+											<a href='https://wegov.nyc/advocacy/regional/' class='menu_link'>Regional Leadership</a>
+										</li>
 									</ul>
 								</li>
 								<li class="dropdown">
 									<a class="dropdown-toggle menu_link" data-toggle="dropdown" href="javascript:void(0)"><span>Tools</span></a>
 									<ul class="dropdown-menu">
-										<li><a href="http://capital.research.wegov.nyc/" class="menu_link">Capital Projects Directory</a></li>
-										<li><a href="http://services.wegov.nyc" class="menu_link">Services Directory & API</a></li>
-										<li><a href="http://nyclaws.readthedocs.io/" class="menu_link">Charter, Code & Rules</a></li>
-										<li><a href="https://maps.wegov.nyc/" class="menu_link">Maps</a></li>
-										<li><a href="https://wegov.nyc/action/" class="menu_link">The Action App!</a></li>
+										<li><a href='http://capital.research.wegov.nyc/' class='menu_link'>Capital Projects</a></li>
+										<li><a href='http://services.wegov.nyc' class='menu_link'>City Services</a></li>
+										<li><a href='http://nyclaws.readthedocs.io/' class='menu_link'>NYC Charter, Code & Rules</a></li>
+										<li><a href='http://endorsements.wegov.nyc/' class='menu_link'>Endorsement Directory</a></li>
+										<li><a href='https://maps.wegov.nyc/' class='menu_link'>City Maps</a></li>
+										<li><a href='https://wegov.nyc/tools/mobile-app/' class='menu_link'>Mobile App</a></li>
 									</ul>
 								</li>
-								<li><a href="https://wegov.nyc/news/" class="menu_link"><span>Community</span></a></li>
-								<li><a href="https://wegov.nyc/blog/" class="menu_link"><span>Blog</span></a></li>
-								<li><a href="https://opencollective.com/wegovnyc" class="menu_link"><span>Donate</span></a></li>
-								<li><a href="https://wegov.nyc/contact/" class="menu_link"><span>Contact</span></a></li>
+								<li><a href='https://wegov.nyc/community/' class='menu_link'><span>Community</span></a></li>
+								<li><a href='https://wegov.nyc/about/' class='menu_link'><span>About </span></a></li>
+								<li><a href='https://wegov.nyc/contact/' class='menu_link'><span>Contact</span></a></li>
+								<li><a href='https://opencollective.com/wegovnyc' class='menu_link'><span>Donate</span></a></li>
 							</ul>
 						</div>
 						<!-- end main menu area -->
@@ -94,9 +101,9 @@ function view()
 					<a class="menu_link<?php echo SubView::$type == 'er' ? ' active' : '" href="electionresults.php'; ?>">Election Results</a>
 					<a class="menu_link<?php echo SubView::$type == 'cb' ? ' active' : '" href="cityboundaries.php'; ?>">City Boundaries</a>
 					<a class="menu_link" href="covidprojects.php">Mutual Aid Groups</a>
-					<a class="menu_link<?php echo SubView::$type == 'pa' ? ' active' : '" href="placabuse.php'; ?>">Placard Abuse</a>
-					<a class="menu_link<?php echo SubView::$type == 'cp' ? ' active' : '" href="capprojects.php'; ?>">Capital Projects</a>
-					<a class="menu_link" href="https://wegov.nyc/tools/action/">About</a>
+					<!-- <a class="menu_link<?php echo SubView::$type == 'pa' ? ' active' : '" href="placabuse.php'; ?>">Placard Abuse</a>
+					<a class="menu_link<?php echo SubView::$type == 'cp' ? ' active' : '" href="capprojects.php'; ?>">Capital Projects</a> -->
+					<a class="menu_link" href="https://wegov.nyc/tools/maps/">About</a>
 				</div>
 			</div>
 			<!-- start mobile menu area -->
@@ -110,25 +117,32 @@ function view()
 							<span>Advocacy</span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="https://wegov.nyc/211-4-nyc/" class="menu_link">Searchable Safety Net</a></li>
-							<li><a href="https://wegov.nyc/open-engaging-effective-government/" class="menu_link">Digital Transformation</a></li>
-							<li><a href="https://wegov.nyc/nymeta/" class="menu_link">Metro-Regional Leadership</a></li>
+							<li>
+								<a href='https://wegov.nyc/advocacy/safety-net/' class='menu_link'>Searchable Safety Net</a>
+							</li>
+							<li>
+								<a href='https://wegov.nyc/advocacy/digital-government/' class='menu_link'>Digital Government</a>
+							</li>
+							<li>
+								<a href='https://wegov.nyc/advocacy/regional/' class='menu_link'>Regional Leadership</a>
+							</li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a class="dropdown-toggle menu_link" data-toggle="dropdown" href="javascript:void(0)"><span>Tools</span></a>
 						<ul class="dropdown-menu">
-							<li><a href="http://capital.research.wegov.nyc/" class="menu_link">Capital Projects Directory</a></li>
-							<li><a href="http://services.wegov.nyc" class="menu_link">Services Directory & API</a></li>
-							<li><a href="http://nyclaws.readthedocs.io/" class="menu_link">Charter, Code & Rules</a></li>
-							<li><a href="https://maps.wegov.nyc/" class="menu_link">Maps</a></li>
-							<li><a href="https://wegov.nyc/action/" class="menu_link">The Action App!</a></li>
+							<li><a href='http://capital.research.wegov.nyc/' class='menu_link'>Capital Projects</a></li>
+							<li><a href='http://services.wegov.nyc' class='menu_link'>City Services</a></li>
+							<li><a href='http://nyclaws.readthedocs.io/' class='menu_link'>NYC Charter, Code & Rules</a></li>
+							<li><a href='http://endorsements.wegov.nyc/' class='menu_link'>Endorsement Directory</a></li>
+							<li><a href='https://maps.wegov.nyc/' class='menu_link'>City Maps</a></li>
+							<li><a href='https://wegov.nyc/tools/mobile-app/' class='menu_link'>Mobile App</a></li>
 						</ul>
 					</li>
-					<li><a href="https://wegov.nyc/news/" class="menu_link"><span>Community</span></a></li>
-					<li><a href="https://wegov.nyc/blog/" class="menu_link"><span>Blog</span></a></li>
-					<li><a href="https://opencollective.com/wegovnyc" class="menu_link"><span>Donate</span></a></li>
-					<li><a href="https://wegov.nyc/contact/" class="menu_link"><span>Contact</span></a></li>
+					<li><a href='https://wegov.nyc/community/' class='menu_link'><span>Community</span></a></li>
+					<li><a href='https://wegov.nyc/about/' class='menu_link'><span>About </span></a></li>
+					<li><a href='https://wegov.nyc/contact/' class='menu_link'><span>Contact</span></a></li>
+					<li><a href='https://opencollective.com/wegovnyc' class='menu_link'><span>Donate</span></a></li>
 				</ul>
 			</div>
 			<!-- end mobile menu area -->

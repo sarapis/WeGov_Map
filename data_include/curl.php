@@ -1,7 +1,7 @@
 <?php
 class Curl
 {
-	public static $cookieFolder = DATADIR . '/cookies';
+	public static $cookieFolder = '';
 	public const SAVECOOKIESBYDEF = false;
 	public static $curl_options = 
 		array(
