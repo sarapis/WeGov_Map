@@ -22,7 +22,7 @@ class Geoclient
 					);
 		$hh = ['Ocp-Apim-Subscription-Key: ' . GEOCLIENT_KEY];
 		$resp = Curl::exec($url, [CURLOPT_HTTPHEADER => $hh]);
-		var_dump($resp);
+		#var_dump($resp);
 		return json_decode($resp, true);
 	}
 	
