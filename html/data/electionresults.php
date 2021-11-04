@@ -11,8 +11,8 @@ elseif ($request['trg'] == 'csv')
 	//$disp = ['er' => 'Votes', 'su' => 'Top Districts'][$request['display']];
 	$div = ['ad' => 'AD', 'aded' => 'ED', 'county' => 'County'][$request['division']];
 	$fn = preg_replace(['~\|$~si', '~\|~si'], ['', ' # '], $request['event']) . " # {$div}.csv";
-	header('Content-Type: application/csv');
-	header('Content-Disposition: attachment; filename="' . $fn . '";');
+	#header('Content-Type: application/csv');
+	#header('Content-Disposition: attachment; filename="' . $fn . '";');
 	echo Csv::encodeCSV($data, ",", '"');
 	die();
 }

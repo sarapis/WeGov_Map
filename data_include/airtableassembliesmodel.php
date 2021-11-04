@@ -1,7 +1,7 @@
 <?php 
-class AirtableCovidModel
+class AirtableAssembliesModel
 {
-	
+	/*
 	static function getOrg($id, $email)
 	{
 		$hh = ["Authorization: Bearer " . AIRTABLE_KEY];
@@ -126,16 +126,22 @@ class AirtableCovidModel
 		return json_decode($resp, true);
 	}
 
-	
+	*/
 	static function getNtaList()
 	{
 		$rr = [];
-		foreach (self::readTable(COVID_SHEET_NEIB) as $n)
-			$rr[$n['fields']['NTACode']] = ['id' => $n['id'], 'code' => $n['fields']['NTACode'], 'name' => $n['fields']['Neighborhood Name'], 'covered' => $n['fields']['Neighborhood Groups Providing Service is In'] <> null];
+		foreach (self::readTable(ASSEMBLIES_NTA_SHEET) as $n)
+			$rr[$n['fields']['NTACode']] = [
+					'code' => $n['fields']['NTACode'], 
+					'name' => $n['fields']['NTAName'], 
+					'covered' => $n['fields']['status'] == 'started',
+					'url' => $n['fields']['url'],
+					'id' => $n['id'], 
+				];
 		return $rr;
 	}
 
-	
+	/*
 	static function getCoverage()
 	{
 		$rr = [];
@@ -145,6 +151,7 @@ class AirtableCovidModel
 		}
 		return array_unique($rr);
 	}	
+	*/
 	
 	static function readTable($table, $view=null)
 	{
@@ -166,12 +173,13 @@ class AirtableCovidModel
 		$hh = ["Authorization: Bearer " . AIRTABLE_KEY];
 		$url = sprintf(
 						'https://api.airtable.com/v0/%s/%s?%s%s',
-						rawurlencode(COVID_DOC),
+						rawurlencode(ASSEMBLIES_DOC),
 						rawurlencode($table),
 						($view ? 'view=' . rawurlencode($view) . '&' : ''),
 						($offs ? "offset={$offs}" : '')
 					);
 		$resp = Curl::exec($url, [CURLOPT_HTTPHEADER => $hh]);
+		//echo $resp;
 		return json_decode($resp, true);
 	}
 
