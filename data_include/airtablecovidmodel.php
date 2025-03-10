@@ -172,6 +172,7 @@ class AirtableCovidModel
 						($offs ? "offset={$offs}" : '')
 					);
 		$resp = Curl::exec($url, [CURLOPT_HTTPHEADER => $hh]);
+		#print_r($resp);
 		return json_decode($resp, true);
 	}
 

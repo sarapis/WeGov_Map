@@ -2,6 +2,7 @@
 include '../data_include/autoload.php';
 
 $ff = [
+		'https://vote.nyc/sites/default/files/pdf/election_results/2019/20191105General%20Election/00050100000Citywide%20ELECTIONS%20Citywide%20EDLevel.csv',
 		'https://vote.nyc/sites/default/files/pdf/election_results/2019/20191105General%20Election/00001200000Citywide%20Public%20Advocate%20Citywide%20EDLevel.csv',
 		'https://vote.nyc/sites/default/files/pdf/election_results/2019/20190625Primary%20Election/00302200045Kings%20Member%20of%20the%20City%20Council%2045th%20Council%20District%20EDLevel.csv',
 		'https://vote.nyc/sites/default/files/pdf/election_results/2017/20171107General%20Election/00001200000Citywide%20Public%20Advocate%20Citywide%20EDLevel.csv',
@@ -40,6 +41,7 @@ function import($url)
 	echo "\n{$url}\n";
 	flush();
 	$csv = csv::parseCSV($c, ',', '"', "\r\n", 0, false);
+	//file_put_contents(__DIR__ . '/data/' . preg_replace('~https://vote.nyc/sites/default/files/pdf/election_results/\d+/[^/]+/~si', '', $url), $c);
 	$ff = ['AD','ED','County','EDAD Status','Event','Party/Independent Body','Office/Position Title','District Key','VoteFor','Unit Name','Tally'];
 	$mm = $cc = [];
 	foreach ($csv as $r)
@@ -49,7 +51,8 @@ function import($url)
 		if ($r)
 		{
 			$m = array_combine($ff, $r);
-			if (strstr($m['Unit Name'], '('))
+			//if (strstr($m['Unit Name'], '('))
+			if (!preg_match('~Manually Counted Emergency|Absentee / Military|Affidavit|Public Counter|Scattered~', $m['Unit Name']) && !preg_match('~COMBINED INTO~si', $m['EDAD Status']))
 				$mm[] = maprow($m);
 			elseif ($m['EDAD Status'] <> 'IN-PLAY')
 				$cc[] = maprow($m);
@@ -66,6 +69,7 @@ function import($url)
 		}
 	}
 	$db->insert_ignore('el_results', $mm);
+	$db->insert_ignore('el_resultsm', $cc);
 	echo sprintf("%.02f%%", $n / count($csv) * 100);
 	flush();
 }

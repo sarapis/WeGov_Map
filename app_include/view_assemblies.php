@@ -153,13 +153,13 @@ function view($embeddable=false)
 							<?php if ($embeddable) :?>	
 								<!-- poweredBy note -->
 								<div id="poweredBy">
-									Map powered by WeGov.NYC
+									Click a neighborhood or enter an address to find local assemblies.
 								</div>
 								<!-- /poweredBy note -->
 							<?php endif; ?>	
 					
 							<div class="input-group input-group-sm">
-								<input type="text" class="form-control" placeholder="Click a neighborhood or enter an address to find local assemblies.." aria-label="Enter your address.." aria-describedby="addon-submit1" id="address">
+								<input type="text" class="form-control" placeholder="Search an Address" aria-label="Enter your address.." aria-describedby="addon-submit1" id="address">
 								<div class="input-group-append">
 									<button class="btn btn-outline-primary" id="addon-submit1" onclick="searchByAddress();">Search</button>
 								</div>

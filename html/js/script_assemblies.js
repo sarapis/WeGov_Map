@@ -4,7 +4,7 @@ var ntas = {};
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
-    center: [-73.96, 40.65],
+    center: [-73.996, 40.716],
 	//pitch: 60,
     zoom: 11
 });
@@ -32,9 +32,9 @@ map.on('load', function() {
 		
 		var nta = features[0].properties.nameAlt
 		if (ntas[nta].covered)
-			window.location.href = ntas[nta].url
+			window.top.location.href = ntas[nta].url
 		else
-			window.location.href = `https://airtable.com/shrBXVH2QQiP9Ww5C?prefill_nta=${ntas[nta].id}`
+			window.top.location.href = `https://airtable.com/shrBXVH2QQiP9Ww5C?prefill_nta=${ntas[nta].id}`
 		
 		/*
 		// Run through the selected features and set a filter
@@ -195,9 +195,9 @@ function dataRequest(addr) {
 			}
 			var nta = dd.results[0].response.nta
 			if (ntas[nta].covered)
-				window.location.href = ntas[nta].url
+				window.top.location.href = ntas[nta].url
 			else
-				window.location.href = `https://airtable.com/shrBXVH2QQiP9Ww5C?prefill_nta=${ntas[nta].id}`
+				window.top.location.href = `https://airtable.com/shrBXVH2QQiP9Ww5C?prefill_nta=${ntas[nta].id}`
 		}
 	})
 }

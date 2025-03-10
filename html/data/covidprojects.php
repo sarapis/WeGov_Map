@@ -63,6 +63,7 @@ function viewGroup($gr)
 {
 	$vv = new grViewer($gr);
 	$ii = $vv->images();
+	#print_r($gr);
 ?>
 	<div class="card mb-3">
 		<div class="card-body">
@@ -83,18 +84,20 @@ function viewGroup($gr)
 				<?php endif; ?>
 			  </div>
 			<?php endif; ?>
-			<h5 class="title col-11 pl-0"><?php echo $vv->v('Group Name'); ?></h5>
-			<div class="project-desc mb-2"><?php echo nl2br($vv->v('Short Description')); ?></div>
+			<h5 class="title col-11 pl-0"><?php echo $vv->v('name'); ?></h5>
+			<div class="project-desc mb-2"><?php echo nl2br($vv->v('description')); ?></div>
 			
 			<p>
-				<?php if ($vv->dd['Group Phone']) : ?>
-					<a title="<?php $vv->v('Group Phone'); ?>" href="tel:<?php $vv->v('Group Phone'); ?>"><i data-feather="phone-outgoing"></i></a>
+				<?php if ($vv->dd['txt:phones']) : ?>
+					<?php foreach ($vv->dd['txt:phones'] as $ph) : ?>
+						<a title="<?php echo $ph; ?>" href="tel:<?php  echo $ph; ?>"><i data-feather="phone-outgoing"></i></a>
+					<?php endforeach; ?>
 				<?php endif; ?>
-				<?php if ($vv->dd['Group Email']) : ?>
-					<a title="<?php $vv->v('Group Email'); ?>" href="mailto:<?php $vv->v('Group Email'); ?>"><i data-feather="mail"></i></a>
+				<?php if ($vv->dd['email']) : ?>
+					<a title="<?php $vv->v('email'); ?>" href="mailto:<?php $vv->v('email'); ?>"><i data-feather="mail"></i></a>
 				<?php endif; ?>
-				<?php if ($vv->dd['Website']) : ?>
-					<a title="<?php $vv->v('Website'); ?>" href="<?php $vv->v('Website'); ?>" target="_blank"><i data-feather="external-link"></i></a>
+				<?php if ($vv->dd['website']) : ?>
+					<a title="<?php $vv->v('website'); ?>" href="<?php $vv->v('website'); ?>" target="_blank"><i data-feather="external-link"></i></a>
 				<?php endif; ?>
 				<?php if ($vv->dd['Facebook']) : ?>
 					<a title="<?php echo $vv->dd['Facebook']; ?>" href="<?php $vv->v('Facebook'); ?>" target="_blank"><i data-feather="facebook"></i></a>
@@ -102,8 +105,8 @@ function viewGroup($gr)
 				<?php if ($vv->dd['Instagram']) : ?>
 					<a title="<?php echo $vv->dd['Instagram']; ?>" href="<?php $vv->v('Instagram'); ?>" target="_blank"><i data-feather="instagram"></i></a>
 				<?php endif; ?>
-				<?php if ($vv->dd['Twitter']) : ?>
-					<a title="<?php echo $vv->dd['Twitter']; ?>" href="<?php $vv->v('Twitter'); ?>" target="_blank"><i data-feather="twitter"></i></a>
+				<?php if ($vv->dd['X']) : ?>
+					<a title="<?php echo $vv->dd['X']; ?>" href="<?php $vv->v('X'); ?>" target="_blank"><i data-feather="twitter"></i></a>
 				<?php endif; ?>
 				
 				<div class="ml-0 mt-1"><i data-feather="map-pin"></i>
@@ -175,10 +178,10 @@ class grViewer
 			case 'Instagram':
 				$d = str_replace('@', 'https://www.instagram.com/', $d);
 				break;
-			case 'Twitter':
+			case 'X':
 				$d = str_replace('@', 'https://twitter.com/', $d);
 				break;
-			case 'Website':
+			case 'website':
 				$d = preg_match('~http~si', $d) ? $d : "//{$d}";
 				break;
 		}
