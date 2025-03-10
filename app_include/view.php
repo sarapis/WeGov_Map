@@ -100,7 +100,7 @@ function view()
 					<span class="badge badge-light title_top_header" >Maps</span>
 					<a class="menu_link<?php echo SubView::$type == 'er' ? ' active' : '" href="electionresults.php'; ?>">Election Results</a>
 					<a class="menu_link<?php echo SubView::$type == 'cb' ? ' active' : '" href="cityboundaries.php'; ?>">City Boundaries</a>
-					<a class="menu_link" href="covidprojects.php">Mutual Aid Groups</a>
+					<a class="menu_link" href="manycprojects.php">Mutual Aid Groups</a>
 					<!-- <a class="menu_link<?php echo SubView::$type == 'pa' ? ' active' : '" href="placabuse.php'; ?>">Placard Abuse</a>
 					<a class="menu_link<?php echo SubView::$type == 'cp' ? ' active' : '" href="capprojects.php'; ?>">Capital Projects</a> -->
 					<a class="menu_link" href="https://wegov.nyc/tools/maps/">About</a>
