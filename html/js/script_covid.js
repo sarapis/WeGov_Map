@@ -4,9 +4,9 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic291bmRwcmVzcyIsImEiOiJjazY1OTF3cXIwbjZyM3Btc
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
-    center: [-73.96, 40.65],
+    center: [-73.96, 40.7],
 	//pitch: 60,
-    zoom: 11
+    zoom: 10.3
 });
 
 map.addControl(new mapboxgl.NavigationControl());
