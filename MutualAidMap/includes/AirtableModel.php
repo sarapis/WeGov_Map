@@ -36,11 +36,11 @@ class AirtableCovidModel
 	{
 		$hh = ["Authorization: Bearer " . AIRTABLE_KEY];
 		$url = sprintf(
-						'https://api.airtable.com/v0/%s/%s?view=%s&filterByFormula=%s', 
+						'https://api.airtable.com/v0/%s/%s?view=%s%s', 
 						rawurlencode(COVID_DOC),
 						rawurlencode(COVID_SHEET_GR),
 						rawurlencode(COVID_VIEW_GR),
-						rawurlencode("FIND('{$ntaName}', {Neighborhoods})")
+						($ntaName ? '&filterByFormula=' . rawurlencode("FIND('{$ntaName}', {Neighborhoods})") : '')
 					);
 		$resp = Curl::exec($url, [CURLOPT_HTTPHEADER => $hh]);
 		$rr = json_decode($resp, true);

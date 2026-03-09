@@ -1,12 +1,12 @@
 mapboxgl.accessToken = 'REPLACE_WITH_YOUR_MAPBOX_TOKEN';
-
+var ntas = {};
 // initial basemap
 var map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/mapbox/light-v10',
-	center: [-73.96, 40.7],
+	center: [-73.996, 40.716],
 	//pitch: 60,
-	zoom: 10.3
+	zoom: 11
 });
 
 map.addControl(new mapboxgl.NavigationControl());
@@ -15,31 +15,42 @@ feather.replace();
 
 
 map.on('load', function () {
-	setBoundary('nta', '#204045', '#204045');
+	setBoundary('nta', '#185892', '#185892');
 
 	map.on('click', function (e) {
 		// set bbox as 5px reactangle area around clicked point
 		var bbox = [
 			[e.point.x - 5, e.point.y - 5],
 			[e.point.x + 5, e.point.y + 5]
-		];
+		]
 		var features = map.queryRenderedFeatures(bbox, {
 			layers: ['ntaF']
-		});
+		})
 
+		if (!features)
+			return
+
+		var nta = features[0].properties.nameAlt
+		if (ntas[nta].covered)
+			window.top.location.href = ntas[nta].url
+		else
+			window.top.location.href = `https://airtable.com/shrBXVH2QQiP9Ww5C?prefill_nta=${ntas[nta].id}`
+
+		/*
 		// Run through the selected features and set a filter
 		// to match features with unique FIPS codes to activate
 		// the `counties-highlighted` layer.
 		var filter = features.reduce(
-			function (memo, feature) {
+			function(memo, feature) {
 				memo.push(feature.properties.nameAlt);
 				return memo;
 			},
 			['in', 'nameAlt']
 		);
-		console.log(filter);
-		dataRequest({ 'nta': filter.slice(2) });
+		//console.log(filter);
+		dataRequest({'nta': filter.slice(2)});
 		map.setFilter('ntaH', filter);
+		*/
 	});
 
 	if (typeof defaultRequest !== 'undefined') {
@@ -105,34 +116,38 @@ function setBoundary(code, lineClr, symbClr) {
 	},
 		'settlement-label'
 	);
-
+	/*
 	map.addLayer({
-		"id": code + 'H',
-		"type": "fill",
-		"source": code,
-		"layout": {
-			'visibility': 'visible',
+			"id": code + 'H',
+			"type": "fill",
+			"source": code,
+			"layout": {
+				'visibility': 'visible',
+			},
+			'paint': {
+				'fill-outline-color': lineClr,
+				'fill-color': lineClr,
+				'fill-opacity': 0.4
+			},
+			'filter': ['in', 'nameAlt', '']
 		},
-		'paint': {
-			'fill-outline-color': lineClr,
-			'fill-color': lineClr,
-			'fill-opacity': 0.4
-		},
-		'filter': ['in', 'nameAlt', '']
-	},
 		'settlement-label'
 	);
+	*/
+	$.get('./data/assembliescoverage.php',
+		function (dd) {
+			ntas = dd
+			console.log(ntas)
 
-	$.get('./data/covidprojectscoverage.php',
-		function (ntas) {
-			var filter = ntas.reduce(
+			var filter = Object.values(ntas).reduce(
 				function (memo, nta) {
-					memo.push(nta.nta);
+					if (nta.covered)
+						memo.push(nta.code);
 					return memo;
 				},
 				['in', 'nameAlt']
 			);
-			console.log(filter);
+			//console.log(filter);
 
 			map.addLayer({
 				"id": code + 'HH',
@@ -142,7 +157,7 @@ function setBoundary(code, lineClr, symbClr) {
 					'visibility': 'visible',
 				},
 				'paint': {
-					'fill-color': '#204045',
+					'fill-color': '#007baa',//	#7a7e5a
 					'fill-opacity': 0.3
 				},
 				'filter': filter
@@ -152,28 +167,39 @@ function setBoundary(code, lineClr, symbClr) {
 		}
 	);
 
+	map.on('mouseenter', 'ntaF', () => {
+		map.getCanvas().style.cursor = 'pointer'
+	})
+	map.on('mouseenter', 'ntaHH', () => {
+		map.getCanvas().style.cursor = 'pointer'
+	})
+	map.on('mouseleave', 'ntaF', () => {
+		map.getCanvas().style.cursor = ''
+	})
+	map.on('mouseleave', 'ntaHH', () => {
+		map.getCanvas().style.cursor = ''
+	})
 }
 
 
-function dataRequest(q) {
-	var req = jQuery.param(q);
-	console.log(req);
-	$.get(`./data/covidprojects.php?${req}`,
-		function (data) {
-			$('#modalContent').html(data);
-
-			// Update Title
-			var ntaName = $('#response-nta-name').text();
-			if (ntaName) {
-				$('#modalTitle').text('Mutual aid groups in ' + ntaName);
-			} else {
-				$('#modalTitle').text('Available mutual aid groups');
+function dataRequest(addr) {
+	$.ajax({
+		url: 'https://api.nyc.gov/geo/geoclient/v1/search.json',
+		data: { input: addr },
+		headers: { 'Ocp-Apim-Subscription-Key': 'e7c4d82e430147c58fd14840a904ba68' },
+		success: function (dd) {
+			if (dd.status != 'OK') {
+				alert('red', 'Wrong address', 'The address you entered is either invalid or isn\'t located in New York City.');
+				//addrSearchPopover('Not found, please try again')
+				return
 			}
-
-			feather.replace();
-			$('#modal').modal();
+			var nta = dd.results[0].response.nta
+			if (ntas[nta].covered)
+				window.top.location.href = ntas[nta].url
+			else
+				window.top.location.href = `https://airtable.com/shrBXVH2QQiP9Ww5C?prefill_nta=${ntas[nta].id}`
 		}
-	);
+	})
 }
 
 
@@ -186,7 +212,7 @@ function searchByAddress() {
 		alert('red', 'Wrong request', 'Please enter valid address');
 		return;
 	}
-	dataRequest({ 'address': addr });
+	dataRequest(addr);
 	$('#address').val('');
 }
 

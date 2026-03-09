@@ -1,0 +1,4 @@
+config/config.php
+.DS_Store
+images/covid_groups/*
+!images/covid_groups/.gitkeep

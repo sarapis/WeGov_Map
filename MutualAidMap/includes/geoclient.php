@@ -1,5 +1,5 @@
 <?php 
-// Now https://api-portal.nyc.gov/    maxim.pokrovsky@gmail.com Maxim2011!
+// NYC Geoclient API - https://api-portal.nyc.gov/
 class Geoclient
 {
 	static function match($addr)
@@ -34,7 +34,7 @@ class Geoclient
 	// Mapbox Fallback Implementation
 	static function getNtaCodeMapbox($addr)
 	{
-		$token = 'REPLACE_WITH_YOUR_MAPBOX_TOKEN';
+		$token = defined('MAPBOX_KEY') ? MAPBOX_KEY : '';
 		$url = sprintf("https://api.mapbox.com/geocoding/v5/mapbox.places/%s.json?access_token=%s&bbox=-74.259,40.477,-73.700,40.917", urlencode($addr), $token);
 		
 		$resp = Curl::exec($url);
@@ -46,7 +46,7 @@ class Geoclient
 		$lat = $json['features'][0]['center'][1];
 		
 		// Load NTA GeoJSON
-		$geoJsonFile = __DIR__ . '/../html/data/nta.geojson';
+		$geoJsonFile = __DIR__ . '/../data/nta.geojson';
 		if (!file_exists($geoJsonFile)) return null;
 		
 		$geoJson = json_decode(file_get_contents($geoJsonFile), true);

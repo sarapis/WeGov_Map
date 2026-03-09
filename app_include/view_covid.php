@@ -150,16 +150,9 @@ function view($embeddable=false)
 					
 						<!-- search form -->
 						<div id='searchControls'>
-							<?php if ($embeddable) :?>	
-								<!-- poweredBy note -->
-								<div id="poweredBy">
-									Map powered by WeGov.NYC
-								</div>
-								<!-- /poweredBy note -->
-							<?php endif; ?>	
 					
 							<div class="input-group input-group-sm">
-								<input type="text" class="form-control" placeholder="Click the neibourghood area or enter your address.." aria-label="Enter your address.." aria-describedby="addon-submit1" id="address">
+								<input type="text" class="form-control" placeholder="Click the neighbourhood area or enter your address.." aria-label="Enter your address.." aria-describedby="addon-submit1" id="address">
 								<div class="input-group-append">
 									<button class="btn btn-outline-primary" id="addon-submit1" onclick="searchByAddress();">Search</button>
 								</div>
@@ -198,6 +191,14 @@ function view($embeddable=false)
 				<div id="map"></div>
 			</div>
 		</div>
+	</div>
+		<?php if ($embeddable) :?>	
+			<!-- poweredBy note -->
+			<div id="poweredBy">
+				Map powered by WeGov.NYC
+			</div>
+			<!-- /poweredBy note -->
+		<?php endif; ?>	
 	</div>
 	
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

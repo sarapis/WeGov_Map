@@ -11,7 +11,7 @@ var map = new mapboxgl.Map({
 
 map.addControl(new mapboxgl.NavigationControl());
 
-feather.replace();
+if (typeof feather !== "undefined") feather.replace();
 
 
 map.on('load', function () {
@@ -123,7 +123,7 @@ function setBoundary(code, lineClr, symbClr) {
 		'settlement-label'
 	);
 
-	$.get('./data/covidprojectscoverage.php',
+	$.get('./data/coverage.php',
 		function (ntas) {
 			var filter = ntas.reduce(
 				function (memo, nta) {
@@ -158,7 +158,7 @@ function setBoundary(code, lineClr, symbClr) {
 function dataRequest(q) {
 	var req = jQuery.param(q);
 	console.log(req);
-	$.get(`./data/covidprojects.php?${req}`,
+	$.get(`./data/projects.php?${req}`,
 		function (data) {
 			$('#modalContent').html(data);
 

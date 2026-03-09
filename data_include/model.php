@@ -85,8 +85,14 @@ class Model
 
 	function getCovidPrj($nta)
 	{
-		$ntas = implode("','", (array)$nta);
-		$rr = $this->db->q("SELECT *, 'project' as object_type FROM covid_prj WHERE nta IN ('{$ntas}') OR nta LIKE '' ORDER BY name");
+		$ntas = (array)$nta;
+		$whereParts = [];
+		foreach ($ntas as $n) {
+			$whereParts[] = "nta LIKE '%\"{$n}\"%'";
+		}
+		$whereSql = implode(' OR ', $whereParts);
+		
+		$rr = $this->db->q("SELECT *, 'project' as object_type FROM covid_prj WHERE ({$whereSql}) OR nta LIKE '' OR nta IS NULL ORDER BY name");
 		return $this->mapCovidPrj($rr);
 	}
 	
