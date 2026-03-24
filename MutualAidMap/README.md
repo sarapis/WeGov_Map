@@ -107,6 +107,15 @@ php_admin_value[memory_limit] = 64M
 **Do NOT** use `pm = dynamic` or `pm = static` on this server — the other services
 (Strapi, CTFG, Portland OCDS, Services app) share the same 3.7GB of RAM.
 
+A systemd override at `/etc/systemd/system/php8.1-fpm.service.d/restart.conf` ensures
+PHP-FPM auto-restarts after OOM kills (max ~5s downtime instead of staying down):
+```ini
+[Service]
+Restart=always
+RestartSec=5
+OOMPolicy=continue
+```
+
 ### Caching Strategy
 
 The cron job (`cron/cacheupdate.php`) generates two static JSON files that eliminate
