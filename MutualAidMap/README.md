@@ -128,6 +128,25 @@ live Airtable API calls at request time:
 
 If these files are missing, the app falls back to live API calls (slow but functional).
 
+### SSL Auto-Renewal (Critical)
+
+> **⚠️ Port 80 conflict**: The cert uses certbot's `standalone` authenticator, which must
+> bind port 80 — but Docker nginx (`opt-nginx-1`) holds it. So a plain `certbot renew` from
+> the timer silently fails for this cert (it failed unnoticed and the cert expired 2026-06-07).
+
+The `map.mutualaid.nyc` renewal config (`/etc/letsencrypt/renewal/map.mutualaid.nyc.conf`)
+has **per-cert hooks** so the automatic certbot timer can renew unattended:
+```ini
+pre_hook = docker stop opt-nginx-1
+post_hook = docker start opt-nginx-1
+renew_hook = cp /etc/letsencrypt/live/map.mutualaid.nyc/fullchain.pem /opt/nginx/certs/map.mutualaid.nyc/ && cp /etc/letsencrypt/live/map.mutualaid.nyc/privkey.pem /opt/nginx/certs/map.mutualaid.nyc/
+```
+These MUST stay **per-cert** (not in `/etc/letsencrypt/renewal-hooks/`) — a global pre-hook
+stopping nginx would break `portland-ocds.wegov.nyc`, which renews via `webroot` and needs
+nginx **up**. Verify with: `certbot renew --cert-name map.mutualaid.nyc --dry-run`.
+
+`setup-ssl.sh` remains the manual one-shot fallback (does the same stop/renew/copy/start).
+
 ### Troubleshooting
 
 | Symptom | Likely Cause | Fix |
@@ -135,4 +154,4 @@ If these files are missing, the app falls back to live API calls (slow but funct
 | 502 Bad Gateway | PHP-FPM crashed (OOM) | `systemctl restart php8.1-fpm` |
 | Map not showing | Mapbox token missing | Set token in `js/script_covid.js` on server |
 | Stale data | Cron not running | `cd /opt/wegovmaps/cron && php cacheupdate.php` |
-| SSL expired | Cert not renewed | `/opt/wegovmaps/setup-ssl.sh` |
+| SSL expired | Auto-renew hooks missing/broken | Run `/opt/wegovmaps/setup-ssl.sh` now; verify hooks per "SSL Auto-Renewal" above |
